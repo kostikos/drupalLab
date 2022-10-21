@@ -1,0 +1,8 @@
+uuid: b205be0e-3ef5-4bc1-9be0-7d7d96b77ab0
+langcode: en
+status: true
+dependencies: {  }
+id: legal
+label: Legal
+description: Legal
+locked: false

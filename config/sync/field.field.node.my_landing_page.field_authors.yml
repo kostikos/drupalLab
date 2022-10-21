@@ -1,0 +1,29 @@
+uuid: 19d66075-4700-4ce0-8669-ebe2c6ea2e87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_authors
+    - node.type.my_landing_page
+id: node.my_landing_page.field_authors
+field_name: field_authors
+entity_type: node
+bundle: my_landing_page
+label: Authors
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

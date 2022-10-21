@@ -1,0 +1,41 @@
+uuid: df4acb96-33fd-4b69-8f61-fd77ce8b651e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.blog
+    - taxonomy.vocabulary.category
+    - taxonomy.vocabulary.tags
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - exclude_node_title
+    - node
+    - taxonomy
+    - toolbar
+id: editor
+label: Editor
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'administer taxonomy'
+  - 'create blog content'
+  - 'create terms in category'
+  - 'create terms in tags'
+  - 'delete blog revisions'
+  - 'delete own blog content'
+  - 'delete terms in category'
+  - 'delete terms in tags'
+  - 'edit own blog content'
+  - 'edit terms in category'
+  - 'edit terms in tags'
+  - 'revert blog revisions'
+  - 'use editorial transition create_new_draft'
+  - 'use exclude node title'
+  - 'view any unpublished content'
+  - 'view blog revisions'
+  - 'view latest version'
+  - 'view own unpublished content'

@@ -1,0 +1,8 @@
+uuid: 2d108c3b-92a7-4ea7-b0a7-593b24d4dc61
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: category
+description: 'Use categories to group articles '
+weight: 0

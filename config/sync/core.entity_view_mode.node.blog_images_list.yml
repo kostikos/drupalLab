@@ -1,0 +1,10 @@
+uuid: d452b98b-9992-4278-957b-da7715248540
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.blog_images_list
+label: 'Blog images list'
+targetEntityType: node
+cache: true

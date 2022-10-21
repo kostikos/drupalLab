@@ -1,0 +1,17 @@
+uuid: 573a3326-89a0-41ae-b8ec-48534b75205b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'New Members on sidebar'
+type: new_members
+description: 'Information about new members.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,42 @@
+uuid: 8405b3b5-38d2-46e8-9b0e-b2803cac216d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4f816162-b452-4878-b761-dca475412041'
+  module:
+    - block_content
+    - node
+    - user
+  theme:
+    - olivero
+id: newmembers
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'block_content:4f816162-b452-4878-b761-dca475412041'
+settings:
+  id: 'block_content:4f816162-b452-4878-b761-dca475412041'
+  label: 'New members'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      new_members: new_members
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      administrator: administrator

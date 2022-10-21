@@ -1,0 +1,17 @@
+uuid: 5f5b0a34-f975-4bb1-b669-08046f880eb3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Main page text'
+type: main_page_text
+description: 'Text about administrator.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

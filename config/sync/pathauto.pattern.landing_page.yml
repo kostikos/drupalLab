@@ -1,0 +1,22 @@
+uuid: b67661e8-cac5-472b-b376-616b9893ea36
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: landing_page
+label: 'Landing page'
+type: 'canonical_entities:node'
+pattern: '/landos/[node:title]'
+selection_criteria:
+  c806002b-79e1-4583-8422-28e17222cf2e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c806002b-79e1-4583-8422-28e17222cf2e
+    context_mapping:
+      node: node
+    bundles:
+      my_landing_page: my_landing_page
+selection_logic: and
+weight: -5
+relationships: {  }

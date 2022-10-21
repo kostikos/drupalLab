@@ -1,0 +1,25 @@
+uuid: 15ebc735-915d-4255-9bd7-cd2253af8d87
+langcode: en
+status: true
+dependencies: {  }
+name: center_center
+label: black_and_white(800x800)
+effects:
+  9a264ba6-2c4a-4f00-b835-bd7b8e589dbf:
+    uuid: 9a264ba6-2c4a-4f00-b835-bd7b8e589dbf
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp
+  b06618f6-d5ef-4ddf-a0dd-9e04fecc1556:
+    uuid: b06618f6-d5ef-4ddf-a0dd-9e04fecc1556
+    id: image_resize
+    weight: 2
+    data:
+      width: 800
+      height: 800
+  94e9e29e-5f47-4e93-bcdb-1582090e490e:
+    uuid: 94e9e29e-5f47-4e93-bcdb-1582090e490e
+    id: image_desaturate
+    weight: 3
+    data: {  }

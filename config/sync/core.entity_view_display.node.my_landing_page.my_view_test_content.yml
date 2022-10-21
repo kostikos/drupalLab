@@ -1,0 +1,45 @@
+uuid: 4e0fcb12-483b-42e7-8ae4-ec31e6ef4a5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.my_view_test_content
+    - field.field.node.my_landing_page.body
+    - field.field.node.my_landing_page.field_authors
+    - field.field.node.my_landing_page.field_media_images
+    - field.field.node.my_landing_page.field_preview_text
+    - field.field.node.my_landing_page.field_slider
+    - field.field.node.my_landing_page.field_source
+    - image.style.super_puper_250x250_
+    - node.type.my_landing_page
+  module:
+    - layout_builder
+    - media
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.my_landing_page.my_view_test_content
+targetEntityType: node
+bundle: my_landing_page
+mode: my_view_test_content
+content:
+  field_media_images:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: super_puper_250x250_
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_authors: true
+  field_preview_text: true
+  field_slider: true
+  field_source: true
+  links: true

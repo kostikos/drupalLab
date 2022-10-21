@@ -1,0 +1,22 @@
+uuid: 0bf2d487-4ef2-49c4-9758-4dfe075ca6ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brochure_block
+    - field.field.block_content.brochure_block.field_broshure
+id: block_content.brochure_block.default
+targetEntityType: block_content
+bundle: brochure_block
+mode: default
+content:
+  field_broshure:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

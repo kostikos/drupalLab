@@ -1,0 +1,31 @@
+uuid: eba036f5-c9e6-439c-b4f9-7fb8414e1e08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.custom_img.field_media_image_1
+    - image.style.large
+    - media.type.custom_img
+  module:
+    - image
+id: media.custom_img.default
+targetEntityType: media
+bundle: custom_img
+mode: default
+content:
+  field_media_image_1:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

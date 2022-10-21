@@ -1,0 +1,18 @@
+uuid: 8c15face-ad88-4a31-aff7-a625f2b1fc96
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.new_members
+id: node.new_members.title
+field_name: title
+entity_type: node
+bundle: new_members
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

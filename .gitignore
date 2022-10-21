@@ -1,0 +1,41 @@
+/web/core
+
+/vendor/
+
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+sites/*/services*.yml
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Ignore SimpleTest multi-site environment.
+sites/simpletest
+
+
+
+/.idea/
+
+/.ddev/
+
+/web/sites/*/files
+/web/sites/*/private
+/web/modules/contrib
+
+/web/index.php
+/web/INSTALL.txt
+/web/LICENSE.txt
+/web/README.txt
+/web/robots.txt
+/web/update.php
+/web/web.config
+
+/web/.htaccess
+/web/README.md
+/web/autoload.php
+/web/example.gitignore
+/web/modules/README.txt
+/web/profiles/README.txt
+/web/sites/README.txt
+/web/themes/README.txt

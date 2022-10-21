@@ -1,0 +1,13 @@
+uuid: 1c603674-2f0a-4122-8ed4-4cd9948b68d8
+langcode: en
+status: false
+dependencies: {  }
+id: custom_img
+label: 'Custom img'
+description: 'My image type'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

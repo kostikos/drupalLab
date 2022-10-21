@@ -1,0 +1,8 @@
+uuid: db4318e3-8a38-4290-9003-d166c6ed2f17
+langcode: en
+status: true
+dependencies: {  }
+id: brochure_block
+label: 'Brochure Block'
+revision: 0
+description: ''

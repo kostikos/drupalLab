@@ -1,0 +1,24 @@
+uuid: 029bd295-6a9a-43c7-8901-87a689218258
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.new_members.field_page_link
+    - field.field.node.new_members.field_preview_picture
+    - node.type.new_members
+  module:
+    - user
+id: node.new_members.teaser
+targetEntityType: node
+bundle: new_members
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_page_link: true
+  field_preview_picture: true

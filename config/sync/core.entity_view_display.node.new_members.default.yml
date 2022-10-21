@@ -1,0 +1,47 @@
+uuid: 2c8b21ed-03f5-498e-9cd9-580c6f436c32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.new_members.field_page_link
+    - field.field.node.new_members.field_preview_picture
+    - image.style.medium
+    - node.type.new_members
+  module:
+    - image
+    - link
+    - user
+id: node.new_members.default
+targetEntityType: node
+bundle: new_members
+mode: default
+content:
+  field_page_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_preview_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

@@ -1,0 +1,20 @@
+uuid: 8e2b7112-dab2-487e-9ad3-a772bb8ea80d
+langcode: en
+status: true
+dependencies: {  }
+name: super_puper_250x250_
+label: Super-puper(250x250)
+effects:
+  58f44184-9517-4442-bd7b-98a449dd7b62:
+    uuid: 58f44184-9517-4442-bd7b-98a449dd7b62
+    id: image_resize
+    weight: 1
+    data:
+      width: 250
+      height: 250
+  6918d7fa-0b72-4744-961a-2501f42562f3:
+    uuid: 6918d7fa-0b72-4744-961a-2501f42562f3
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

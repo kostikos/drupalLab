@@ -1,0 +1,17 @@
+uuid: e1d2a841-b2b8-4baf-98d9-70db943deff4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'My landing page'
+type: my_landing_page
+description: 'All my landings. '
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

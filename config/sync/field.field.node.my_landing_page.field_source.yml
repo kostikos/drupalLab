@@ -1,0 +1,23 @@
+uuid: a8cb4cd5-662d-47b6-b114-69041635340d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.my_landing_page
+  module:
+    - link
+id: node.my_landing_page.field_source
+field_name: field_source
+entity_type: node
+bundle: my_landing_page
+label: Source
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

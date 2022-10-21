@@ -1,0 +1,10 @@
+uuid: 9d7966ad-d0cf-4a35-af47-7c6637efce76
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.my_view_test_content
+label: 'My view test content'
+targetEntityType: node
+cache: true

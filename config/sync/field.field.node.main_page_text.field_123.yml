@@ -1,0 +1,19 @@
+uuid: 496844ba-81e7-4972-bb5e-922bcc421a62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_123
+    - node.type.main_page_text
+id: node.main_page_text.field_123
+field_name: field_123
+entity_type: node
+bundle: main_page_text
+label: '123'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

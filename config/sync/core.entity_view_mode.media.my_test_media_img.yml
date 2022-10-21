@@ -1,0 +1,10 @@
+uuid: 7f910935-f961-4f9f-ba50-d606ccc8299e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.my_test_media_img
+label: 'my test media img'
+targetEntityType: media
+cache: true

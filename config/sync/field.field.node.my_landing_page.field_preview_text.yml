@@ -1,0 +1,19 @@
+uuid: f2a4c998-76d6-47fa-a8c1-f33f5a7e70d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_preview_text
+    - node.type.my_landing_page
+id: node.my_landing_page.field_preview_text
+field_name: field_preview_text
+entity_type: node
+bundle: my_landing_page
+label: 'Preview text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

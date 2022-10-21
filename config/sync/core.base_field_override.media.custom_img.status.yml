@@ -1,0 +1,22 @@
+uuid: a5d1e006-6c1a-4397-91bc-ca786844c8a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.custom_img
+id: media.custom_img.status
+field_name: status
+entity_type: media
+bundle: custom_img
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
