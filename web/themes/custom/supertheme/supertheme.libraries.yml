@@ -1,0 +1,23 @@
+desandro-styles:
+  version: VERSION
+  css:
+    theme:
+      css/custom/masonry-docs.css: {}
+      css/custom/masonry-custom.css: {}
+  js:
+    js/masonry-docs.min.js: {}
+    js/custom.js: {}
+    dependencies:
+      - core/drupal
+      - core/jquery
+      - core/once
+
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/custom/style.css: {}
+  js:
+    js/custom.js: {}
+
+
