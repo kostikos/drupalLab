@@ -1,0 +1,16 @@
+studentregistration.result:
+  path: '/registration/done'
+  defaults:
+    _title: 'Registration result'
+    _controller: '\Drupal\studentregistration\Controller\StudentregistrationController::build'
+  requirements:
+    _permission: 'access content'
+
+studentregistration.form:
+  path: '/registration'
+  defaults:
+    _form: '\Drupal\studentregistration\Form\RegistrationForm'
+  requirements:
+    _permission: 'access content'
+
+

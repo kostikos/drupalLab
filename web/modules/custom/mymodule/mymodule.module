@@ -1,0 +1,140 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Olivero theme.
+ */
+
+use \Drupal\Core\Form;
+
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function mymodule_preprocess_html(&$variables)
+{
+  if (theme_get_setting('mobile_menu_all_widths') === 1) {
+    //$variables['attributes']['class'][] = 'is-always-mobile-nav';
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function mymodule_preprocess_page(&$variables)
+{
+  $view_id = \Drupal::routeMatch()->getParameter('view_id');
+
+  if ($view_id == 'blog_list') {
+    $variables['#attached']['library'][] = 'supertheme/desandro-styles';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function mymodule_preprocess_node(&$variables)
+{
+
+  /*
+   * TODO: dont wokr with sidebar, why? are the same blocks?
+   */
+  if ($variables['node']->bundle() === 'blog' && $variables['view_mode'] === 'random_blog_item') {
+    unset($variables['content']['field_authored_on']);
+  }
+  $c = 1;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function mymodule_preprocess_block(&$variables)
+{
+  if (!empty($variables['elements']['#id'])) {
+    /** @var \Drupal\block\BlockInterface $block */
+    $block = \Drupal::entityTypeManager()
+      ->getStorage('block')
+      ->load($variables['elements']['#id']);
+    if ($block) {
+      $region = $block->getRegion();
+      if ($variables['plugin_id'] === 'views_block:random_blog_item-block_1') {
+        if ($region === 'sidebar_top') {
+          $variables['#attached']['library'][] = 'supertheme/slick-slider';
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function mymodule_form_mymodule_firstform_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  $form['reset_button'] = array(
+    '#type' => 'submit',
+    '#value' => 'reset',
+    '#weight' => 2000,
+  );
+  return $form;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mymodule_theme($existing, $type, $theme, $path)
+{
+  return [
+    'mymodule_example_theme' => [
+      'variables' => [
+        'title' => [],
+        'description' => NULL,
+        'date' => NULL,
+        'link' => NULL,
+        'tags' => NULL,
+      ],
+      'pattern' => 'mymodule_example_theme__',
+    ],
+    'mymodule_form_result' => [
+      'variables' => [
+        'name' => NULL,
+        'email' => NULL,
+        'gender' => NULL,
+        'age' => NULL,
+      ],
+
+    ],
+    'mymodule_form_result_long_url' => [
+      'variables' => [
+        'name' => NULL,
+        'email' => NULL,
+        'gender' => NULL,
+        'age' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function mymodule_theme_suggestions_mymodule_example_theme(array $variables)
+{
+  $suggestion = [];
+  $pattern = 'mymodule_example_theme__';
+  if ($variables['date']) {
+    $suggestion[] = $pattern . 'second_lvl_priority_' . $variables['date'];
+  }
+  if ($variables['tags']) {
+    $suggestion[] = $pattern . 'third_lvl_priority_' . $variables['tags'];
+  }
+  if ($variables['tags'] && $variables['date']) {
+    $suggestion[] = $pattern . 'last_lvl_priority__' . $variables['tags'] . '__' . $variables['date'];
+  }
+
+  return $suggestion;
+}
