@@ -50,19 +50,21 @@
   label_display == 'visually_hidden' ? 'visually-hidden',
 ] %}
 
-
 <div class="grid">
   {% for item in items %}
-  {% if loop.index % 4 == 0 %}
-</div>
-<div class="grid">
-  {% endif %}
 
-  {% if loop.index % 3 == 0 %}
-    <div{{ item.attributes.addClass('grid-item grid-item--width2') }}>{{ item.content }}</div>
-  {% else %}
-    <div{{ item.attributes.addClass('grid-item grid-item--height2') }}>{{ item.content }}</div>
-  {% endif %}
+    {#{% if loop.index % 4 == 0 %}
+  </div>
+  <div class="grid">
+    {% endif %}#}
+
+    {% if loop.index % 4 == 0 %}
+      <div{{ item.attributes.addClass('grid-item grid-item--width2') }}>{{ item.content }}</div>
+    {% elseif loop.index % 5 == 0 %}
+      <div{{ item.attributes.addClass('grid-item grid-item--height2') }}>{{ item.content }}</div>
+    {% else %}
+      <div{{ item.attributes.addClass('grid-item') }}>{{ item.content }}</div>
+    {% endif %}
   {% endfor %}
 </div>
 

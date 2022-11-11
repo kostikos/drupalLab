@@ -1,0 +1,33 @@
+mymodule.form1:
+  path: '/forms/form1'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\FirstController::content'
+  requirements:
+    _permission: 'access content'
+
+mymodule.form2:
+  path: '/forms/form2'
+  defaults:
+    _form: '\Drupal\mymodule\Forms\FirstForm'
+  requirements:
+    _permission: 'access content'
+
+mymodule.example.autogenerate.first:
+  path: '/example/first'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\HookThemeExample1::build'
+  requirements:
+    _permission: 'access content'
+
+mymodule.forms.result:
+  path: '/forms/result'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\FormResaultPage::build'
+  requirements:
+    _permission: 'access content'
+mymodule.forms.result.paramsinurl:
+  path: '/forms/result2/{name}/{age}/{email}'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\FormResaultPageParamsInUrl::build'
+  requirements:
+    _permission: 'access content'

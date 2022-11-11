@@ -1101,7 +1101,7 @@ two columns for large devices
 
 /* site-footer
 ------------------------- */
-
+/*
 .site-footer {
   padding: 40px 0;
   margin-top: 60px;
@@ -1116,7 +1116,7 @@ two columns for large devices
   height: 1.3rem;
   vertical-align: middle;
 }
-
+*/
 /* socks-promo
 ------------------------- */
 
@@ -1182,12 +1182,12 @@ html.export {
   font-size: 15px;
 }
 
-
+/*
 body {
   color: #333;
   background: #D8D5D2;
 }
-
+*/
 body, input, button {
   font-family: Texta, Avenir Next, sans-serif;
 }
@@ -1511,8 +1511,8 @@ code .masonry_keyword { color: #0FF; text-decoration: underline; }
   font-family: 'Texta';
   font-weight: bold;
   font-style: normal;
-  src: url('../fonts/2D333F_0_0.woff2') format('woff2'),
-    url('../fonts/2D333F_0_0.woff') format('woff');
+  src: url('../../fonts/2D333F_0_0.woff2') format('woff2'),
+    url('../../fonts/2D333F_0_0.woff') format('woff');
 }
 
 /* Texta Italic */
@@ -1520,15 +1520,15 @@ code .masonry_keyword { color: #0FF; text-decoration: underline; }
   font-family: 'Texta';
   font-weight: normal;
   font-style: italic;
-  src: url('../fonts/2D333F_1_0.woff2') format('woff2'),
-    url('../fonts/2D333F_1_0.woff') format('woff');
+  src: url('../../fonts/2D333F_1_0.woff2') format('woff2'),
+    url('../../fonts/2D333F_1_0.woff') format('woff');
 }
 
 /* Texta Regular */
 @font-face {
   font-family: 'Texta';
-  src: url('../fonts/2D333F_2_0.woff2') format('woff2'),
-    url('../fonts/2D333F_2_0.woff') format('woff');
+  src: url('../../fonts/2D333F_2_0.woff2') format('woff2'),
+    url('../../fonts/2D333F_2_0.woff') format('woff');
 }
 
 /* ---- desktop  ---- */
@@ -1843,7 +1843,7 @@ code .masonry_keyword { color: #0FF; text-decoration: underline; }
 }
 
 @media screen and ( min-width: 1100px ) {
-  
+
   .container {
     margin-left: 6%;
     margin-right: 200px;
@@ -2266,7 +2266,7 @@ code .masonry_keyword { color: #0FF; text-decoration: underline; }
 
 /* site-footer
 ------------------------- */
-
+/*
 .site-footer {
   color: #888;
   background: #F8F5F2;
@@ -2274,7 +2274,7 @@ code .masonry_keyword { color: #0FF; text-decoration: underline; }
   position: relative;
   z-index: 10; /* above page-nav */
 }
-
+*/
 /* site nav
 ------------------------- */
 

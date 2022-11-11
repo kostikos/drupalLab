@@ -1,0 +1,77 @@
+<?php
+//
+///**
+// * @file
+// * Functions to support theming in the Olivero theme.
+// */
+//
+//
+///**
+// * Implements hook_preprocess_HOOK() for HTML document templates.
+// *
+// * Adds body classes if certain regions have content.
+// */
+//function supertheme_preprocess_html(&$variables)
+//{
+//  if (theme_get_setting('mobile_menu_all_widths') === 1) {
+//    //$variables['attributes']['class'][] = 'is-always-mobile-nav';
+//  }
+//
+//}
+//
+///**
+// * Implements hook_preprocess_HOOK() for page.html.twig.
+// */
+//function supertheme_preprocess_page(&$variables)
+//{
+//  $view_id = \Drupal::routeMatch()->getParameter('view_id');
+//
+//  if ($view_id == 'blog_list') {
+//    $variables['#attached']['library'][] = 'supertheme/desandro-styles';
+//  }
+//}
+//
+///**
+// * Implements hook_preprocess_HOOK() for node.html.twig.
+// */
+//function supertheme_preprocess_node(&$variables)
+//{
+//
+//  /*
+//   * TODO: dont wokr with sidebar, why? are the same blocks?
+//   */
+//  if ($variables['node']->bundle() === 'blog' && $variables['view_mode'] === 'random_blog_item') {
+//    unset($variables['content']['field_authored_on']);
+//  }
+//}
+//
+///**
+// * Implements hook_preprocess_HOOK() for block.html.twig.
+// */
+//function supertheme_preprocess_block(&$variables)
+//{
+//  if (!empty($variables['elements']['#id'])) {
+//    /** @var \Drupal\block\BlockInterface $block */
+//    $block = \Drupal::entityTypeManager()
+//      ->getStorage('block')
+//      ->load($variables['elements']['#id']);
+//    if ($block) {
+//      $region = $block->getRegion();
+//      if ($variables['plugin_id'] === 'views_block:random_blog_item-block_1') {
+//        if ($region === 'sidebar_top') {
+//          $variables['#attached']['library'][] = 'supertheme/slick-slider';
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//
+///**
+// * Implements hook_theme_suggestions_HOOK_alter() for block().
+// */
+//function supertheme_theme_suggestions_block_alter(&$suggestions, array $variables)
+//{
+//
+//}
+//

@@ -13,8 +13,8 @@
 /* ---- grid-item ---- */
 
 .grid-item {
-  width: 150px;
-  height: 180px;
+  width: 206px;
+  height: 285px;
   float: left;
   background: #D26;
   border: 2px solid #333;
@@ -26,5 +26,11 @@
 .grid-item img {
   height: 100%;
 }
-.grid-item--width2 { width: 317px;  }
+.grid-item--width2 { width: 412px;  }
+.grid-item--width1 { width: 618px;  }
+
+.grid-item h2 {
+  font-size: 1.25rem;
+  margin: 0px;
+}
 

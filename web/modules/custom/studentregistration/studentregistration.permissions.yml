@@ -1,0 +1,4 @@
+administer studentregistration configuration:
+  title: 'Administer studentregistration configuration'
+  description: 'Optional description.'
+  restrict access: true

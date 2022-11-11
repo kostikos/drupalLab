@@ -20,4 +20,20 @@ global-styling:
   js:
     js/custom.js: {}
 
-
+slick-slider:
+  remote: //cdn.jsdelivr.net/npm/slick-carousel@1.8.1/
+  version: 1.8.1
+  license:
+    name: MIT
+    #url: https://fortawesome.github.io/Font-Awesome/license/
+    gpl-compatible: true
+  css:
+    theme:
+      //cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: { type: external }
+      //cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css: { type: external, minified: true }
+  js:
+    //cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external, minified: true }
+    js/sidebar.js: {}
+    dependencies:
+      - core/drupal
+      - core/jquery
