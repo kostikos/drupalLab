@@ -23,6 +23,7 @@ function studentregistration_theme($existing, $type, $theme, $path)
         'phone' => NULL,
         'dob' => NULL,
         'gender' => NULL,
+        'average_mark'=>NULL,
       ],
     ],
   ];
