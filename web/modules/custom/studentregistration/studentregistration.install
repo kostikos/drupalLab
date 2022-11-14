@@ -13,10 +13,8 @@
 function studentregistration_install()
 {
 
-  // Create the styles directory and ensure it's writable.
-  /* $directory = file_default_scheme() . '://styles';
-   $mode = isset($GLOBALS['install_state']['mode']) ? $GLOBALS['install_state']['mode'] : NULL;
-   file_prepare_directory($directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS, $mode);*/
+  studentregistration_update_8002();
+  studentregistration_update_8003();
 }
 
 /**
@@ -104,10 +102,8 @@ function studentregistration_schema()
 /**
  * Implements hook_update().
  *
- * @param $sandbox
- * @return void
  */
-function studentregistration_update_8022(&$sandbox)
+function studentregistration_update_8002()
 {
   $average_mark = [
     'type' => 'float',
@@ -124,46 +120,23 @@ function studentregistration_update_8022(&$sandbox)
 /**
  * Implements hook_update().
  *
- * @param $sandbox
- * @return void
  */
-function studentregistration_update_8021(&$sandbox)
+function studentregistration_update_8003()
 {
 
   $database = \Drupal::database();
   $query = $database->select('students')
-    ->isNull('average_mark')
-    ->fields('students', ['average_mark', 'uid']);
-  $result = $query->execute()->fetchAssoc();
-  foreach ($result as $item) {
-    var_dump($item);
+    ->condition('average_mark', 0)
+    ->fields('students', ['uid']);
+  $arResult = $query->execute()->fetchAssoc();
+
+  if ($arResult) {
+    foreach ($arResult as $item) {
+      $avgUpdated = \Drupal\Core\Database\Database::getConnection()->update('students')
+        ->fields([
+          'average_mark' => rand(1, 12),
+        ])
+        ->condition('uid', $item)->execute();
+    }
   }
-  /*$num_updated = \Drupal\Core\Database\Database::getConnection()->update('students')
-    ->fields([
-      'average_mark' => rand(1, 12),
-    ])
-    ->condition('average_mark', 0,)
-    ->execute();
-
-*/
 }
-
-/**
- * Implements hook_update().
- *
- * @param $sandbox
- * @return void
- */
-/*
-function studentregistration_update_8002(&$sandbox)
-{
-  $database = \Drupal::database();
-  $query = $database->select('students')
-    //->condition('students.average_mark', NULL)
-    ->isNull('average_mark')
-    ->fields('students', ['uid', 'name', 'rollnumner', 'email', 'phone', 'dob', 'gender'])
-    ->range(0, 1);
-  $result = $query->execute()->fetchAssoc();
-
-}
-*/
