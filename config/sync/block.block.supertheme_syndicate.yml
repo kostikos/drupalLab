@@ -1,0 +1,23 @@
+uuid: 0d261f7e-4f04-456b-ad50-a79959fc2ee0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - supertheme
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: supertheme_syndicate
+theme: supertheme
+region: social
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

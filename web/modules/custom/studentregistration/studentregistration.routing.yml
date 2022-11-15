@@ -1,16 +1,39 @@
 studentregistration.result:
-  path: '/registration/done'
+  path: '/registration/{id}'
   defaults:
     _title: 'Registration result'
-    _controller: '\Drupal\studentregistration\Controller\StudentregistrationController::build'
+    _controller: '\Drupal\studentregistration\Controller\StudentregistrationView::build'
   requirements:
     _permission: 'access content'
 
-studentregistration.form:
+studentregistration.result.list:
+  path: '/registrations'
+  defaults:
+    _title: 'Registration result'
+    _controller: '\Drupal\studentregistration\Controller\StudentregistrationList::build'
+  requirements:
+    _permission: 'access content'
+
+studentregistration.form.add:
   path: '/registration'
   defaults:
     _form: '\Drupal\studentregistration\Form\RegistrationForm'
   requirements:
     _permission: 'access content'
 
+studentregistration.form.edit:
+  path: '/registration/{id}/edit'
+  defaults:
+    _form: '\Drupal\studentregistration\Form\RegistrationFormEdit'
+    _title: 'Confirm Deletion'
+  requirements:
+    _permission: 'administer site configuration'
+    id: ^\d+$
+
+studentregistration.form.delet:
+  path: '/registration/{id}/delete'
+  defaults:
+    _form: '\Drupal\studentregistration\Form\RegistrationFormDelete'
+  requirements:
+    _permission: 'access content'
 

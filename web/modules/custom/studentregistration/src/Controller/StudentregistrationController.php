@@ -3,7 +3,6 @@
 namespace Drupal\studentregistration\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\redirect\Entity\Redirect;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -17,6 +16,7 @@ class StudentregistrationController extends ControllerBase
    */
   public function build(Request $request)
   {
+    var_dump($current_path = \Drupal::service('path.current')->getPath());
     if ($request->query->has('result_id')) {
       $studentId = $request->query->get('result_id');
       $database = \Drupal::database();
