@@ -1,0 +1,9 @@
+# Custom module library for general purposes.
+red:
+  js:
+    js/red.js: {}
+  css:
+    component:
+      css/red.css: {}
+  dependencies:
+    - core/drupalSettings
