@@ -1,8 +1,8 @@
 ajaxform.example:
-  path: '/ajaxform/example'
+  path: '/ajaxform'
   defaults:
     _title: 'Example'
-    _controller: '\Drupal\ajaxform\Controller\AjaxformController::build'
+    _controller: '\Drupal\ajaxFormWithSteps\Controller\AjaxformController::build'
   requirements:
     _permission: 'access content'
 

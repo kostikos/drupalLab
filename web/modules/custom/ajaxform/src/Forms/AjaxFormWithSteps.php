@@ -10,7 +10,7 @@ use Drupal\Core\Ajax\HtmlCommand;
 /**
  * Our example form class
  */
-class AjaxSubmitDemo extends FormBase
+class AjaxFormWithSteps extends FormBase
 {
 
   /**
