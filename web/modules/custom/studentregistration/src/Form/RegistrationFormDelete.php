@@ -41,6 +41,7 @@ class RegistrationFormDelete extends ConfirmFormBase
       ->execute();
 
     if ($num_deleted > 0) {
+      \Drupal::messenger()->addMessage('TEst 123');
       $url = Url::fromRoute('studentregistration.result.list');
       $form_state->setRedirectUrl($url);
     }
