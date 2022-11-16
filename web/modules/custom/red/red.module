@@ -14,11 +14,12 @@ function red_preprocess_page(&$variables)
 
   $build = [
     '#theme' => 'red_custom_theme',
-    '#weight' => -22,
+    //'#weight' => -22,
     '#user' => $roles,
     '#cache' => [
-      'tags' => ['user.roles'],
-      'max-age' => 5,
+      'context'=>['user.roles'],
+      'tags' => ['user'],
+      'max-age' => 300,
     ],
   ];
 
