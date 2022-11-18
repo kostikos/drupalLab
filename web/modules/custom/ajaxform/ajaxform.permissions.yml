@@ -1,4 +1,0 @@
-administer ajaxform configuration:
-  title: 'Administer ajaxform configuration'
-  description: 'Optional description.'
-  restrict access: true
