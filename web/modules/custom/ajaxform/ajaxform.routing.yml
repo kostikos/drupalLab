@@ -1,0 +1,8 @@
+ajaxform.example:
+  path: '/ajaxform'
+  defaults:
+    _title: 'Example'
+    _form: '\Drupal\ajaxform\Forms\AjaxFormWithSteps'
+  requirements:
+    _permission: 'access content'
+
