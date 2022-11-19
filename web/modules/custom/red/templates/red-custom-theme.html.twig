@@ -1,0 +1,9 @@
+<div{{ attributes.addClass( 'some-custom-class') }}>
+  <p>Your role are:</p>
+  <ul>
+    {% for item in user %}
+      <li> {{ item }}</li>
+    {% endfor %}
+  </ul>
+</div>
+

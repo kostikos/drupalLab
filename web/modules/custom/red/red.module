@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Render Arrays module.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function red_preprocess_page(&$variables)
+{
+  $roles = \Drupal::currentUser()->getRoles();
+
+  $build = [
+    '#theme' => 'red_custom_theme',
+    //'#weight' => -22,
+    '#user' => $roles,
+    '#cache' => [
+      'context'=>['user.roles'],
+      'tags' => ['user'],
+      'max-age' => 300,
+    ],
+  ];
+
+  $variables['page']['footer_bottom']['custom_info'] = $build;
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function red_preprocess_region(&$variables)
+{
+  //ksm($variables);
+
+  if (isset($variables['region']) && $variables['region'] == 'footer_bottom') {
+    $roles = \Drupal::currentUser()->getRoles();
+    if (in_array('administrator', $roles)) {
+      $variables['attributes']['class'][] = 'footer-admin';
+    }elseif (in_array('editor', $roles)){
+      $variables['attributes']['class'][] = 'footer-editor';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function red_theme($existing, $type, $theme, $path)
+{
+  return [
+    'red_custom_theme' => [
+      'variables' => [
+        'user' => [],
+      ],
+    ],
+  ];
+}

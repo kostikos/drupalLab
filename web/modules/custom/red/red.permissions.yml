@@ -1,0 +1,4 @@
+administer red configuration:
+  title: 'Administer red configuration'
+  description: 'Optional description.'
+  restrict access: true

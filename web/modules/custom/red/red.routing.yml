@@ -1,0 +1,8 @@
+red.example:
+  path: '/red'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\red\Controller\RedController::build'
+  requirements:
+    _permission: 'access content'
+
