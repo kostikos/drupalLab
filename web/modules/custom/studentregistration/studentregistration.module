@@ -26,5 +26,10 @@ function studentregistration_theme($existing, $type, $theme, $path)
         'average_mark'=>NULL,
       ],
     ],
+    'studentregistration_list' => [
+      'variables' => [
+        'students' => NULL,
+      ],
+    ],
   ];
 }

@@ -1,0 +1,33 @@
+uuid: 50f7bda7-0396-4a1f-93ac-c1d3e6a860d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_images
+  module:
+    - node
+    - views
+  theme:
+    - supertheme
+id: supertheme_views_block__media_images_block_1
+theme: supertheme
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:media_images-block_1'
+settings:
+  id: 'views_block:media_images-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      my_landing_page: my_landing_page

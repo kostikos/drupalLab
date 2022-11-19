@@ -1,0 +1,22 @@
+uuid: 120440b9-1dea-443b-abdf-49f7b31a26dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - supertheme
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: supertheme_powered
+theme: supertheme
+region: footer_bottom
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

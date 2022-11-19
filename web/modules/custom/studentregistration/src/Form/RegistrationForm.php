@@ -83,7 +83,6 @@ class RegistrationForm extends FormBase
 
   public function submitForm(array &$form, FormStateInterface $form_state)
   {
-
     $arResult = $form_state->getValues();
     $query = \Drupal::database()->insert('students');
     $query->fields([
@@ -95,7 +94,7 @@ class RegistrationForm extends FormBase
       'average_mark'=>$arResult['average_mark'],
       'gender' => $arResult['gender'],
     ]);
-    $resulrId['result_id'] = $query->execute();
+    $resulrId['id'] = $query->execute();
     $url = Url::fromRoute('studentregistration.result', $resulrId);
     $form_state->setRedirectUrl($url);
   }

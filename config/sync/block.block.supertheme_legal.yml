@@ -1,0 +1,25 @@
+uuid: ea755a14-37c3-4c99-9f9f-81364843d476
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.legal
+  module:
+    - system
+  theme:
+    - supertheme
+id: supertheme_legal
+theme: supertheme
+region: footer_bottom
+weight: -8
+provider: null
+plugin: 'system_menu_block:legal'
+settings:
+  id: 'system_menu_block:legal'
+  label: Legal
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
