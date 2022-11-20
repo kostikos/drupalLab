@@ -15,8 +15,16 @@ function student_theme() {
     'student' => [
       'render element' => 'elements',
     ],
+    'student_latest_node_theme' => [
+      'variables' => [
+        'items' => [],
+        'otherr'=>NULL,
+      ],
+
+    ],
   ];
 }
+
 
 /**
  * Prepares variables for student templates.

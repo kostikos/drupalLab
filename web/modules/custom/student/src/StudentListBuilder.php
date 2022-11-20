@@ -91,6 +91,7 @@ class StudentListBuilder extends EntityListBuilder {
 
     $row['id'] = $entity->id();
     $row['name'] = $entity->get('surname')->getValue()[0]['value'];
+    //$row['name'] = $entity->get('surname')->getValue(0)->getValue('value')->getValue();
     $row['surname'] = $entity->get('surname')->getValue()[0]['value'];
     $row['email'] =$entity->get('email')->getValue()[0]['value'];
     $row['phone'] = $entity->get('phone')->getValue()[0]['value'];
