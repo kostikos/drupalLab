@@ -9,9 +9,24 @@ namespace Drupal\studentregistration\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 
 class RegistrationForm extends FormBase
 {
+
+  protected $database;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    $instance = parent::create($container);
+    $instance->database = $container->get('database');
+
+    return $instance;
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -84,7 +99,7 @@ class RegistrationForm extends FormBase
   public function submitForm(array &$form, FormStateInterface $form_state)
   {
     $arResult = $form_state->getValues();
-    $query = \Drupal::database()->insert('students');
+    $query = $this->database->insert('students');
     $query->fields([
       'name' => $arResult['name'],
       'rollnumner' => $arResult['rollnumner'],
