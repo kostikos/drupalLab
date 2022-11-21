@@ -1,0 +1,8 @@
+student.example:
+  path: '/latestnode'
+  defaults:
+    _title: 'Latest Node Controller'
+    _controller: '\Drupal\student\Controller\StudentLatestNodesController::build'
+  requirements:
+    _permission: 'access content'
+
