@@ -9,9 +9,27 @@ namespace Drupal\studentregistration\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 class RegistrationFormEdit extends FormBase
 {
+
+  protected $database;
+  protected $route;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    $instance = parent::create($container);
+    $instance->database = $container->get('database');
+    $instance->route = $container->get('current_route_match');
+
+    return $instance;
+  }
+
+
   /**
    * {@inheritdoc}
    */
@@ -22,12 +40,9 @@ class RegistrationFormEdit extends FormBase
 
   public function buildForm(array $form, FormStateInterface $form_state): array
   {
-    //$request = $this->getRequest()->;
-
     $form['#method'] = 'POST';
-    $studentId = \Drupal::routeMatch()->getParameter('id');
-    $database = \Drupal::database();
-    $query = $database->select('students')
+    $studentId = $this->route->getParameter('id');
+    $query = $this->database->select('students')
       ->condition('students.uid', $studentId)
       ->fields('students', ['uid', 'name', 'rollnumner', 'average_mark', 'email', 'phone', 'dob', 'gender'])
       ->range(0, 1);
@@ -89,6 +104,7 @@ class RegistrationFormEdit extends FormBase
       '#value' => $this->t('Save'),
       '#button_type' => 'primary',
     );
+
     return $form;
   }
 
@@ -106,7 +122,7 @@ class RegistrationFormEdit extends FormBase
   {
 
     $arResult = $form_state->getValues();
-    $query = \Drupal::database()->update('students');
+    $query =$this->database->update('students');
     $query->fields([
       'name' => $arResult['name'],
       'rollnumner' => $arResult['rollnumner'],

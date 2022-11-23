@@ -3,6 +3,8 @@
 namespace Drupal\studentregistration\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Database\Connection;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -12,6 +14,35 @@ class StudentregistrationView extends ControllerBase
 {
 
   /**
+   * Active database connection.
+   *
+   * @var Connection
+   */
+  protected $database;
+
+
+  /**
+   * Constructs object.
+   *
+   * @param Connection $database
+   *   The database connection to be used.
+   */
+  public function __construct(Connection $database)
+  {
+    $this->database = $database;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container)
+  {
+    return new static(
+      $container->get('database'),
+    );
+  }
+
+  /**
    * Builds the response.
    */
 
@@ -19,8 +50,7 @@ class StudentregistrationView extends ControllerBase
   {
 
     if ($id) {
-      $database = \Drupal::database();
-      $query = $database->select('students')
+      $query = $this->database->select('students')
         ->condition('students.uid', $id)
         ->fields('students', ['uid', 'name', 'rollnumner', 'average_mark', 'email', 'phone', 'dob', 'gender'])
         ->range(0, 1);
