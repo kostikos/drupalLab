@@ -21,7 +21,7 @@ class StudentLatestNodesController extends ControllerBase
       ->exists('field_preview_picture')
       // ->condition('type', 'article') // type = bundle id (machine name)
       ->sort('created', 'ASC') // sorted by time of creation
-      ->pager(4) // limit 15 items
+      ->pager(4) // limit 4 items
       //->range(0, 10)
       ->execute();
 
