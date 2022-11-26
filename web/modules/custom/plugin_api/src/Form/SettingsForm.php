@@ -6,7 +6,8 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Configure Plugin API settings for this site.
+ * Default configure Plugin API settings for this site make by drush
+ * TODO Make it possible to edit the plugin configuration using admin panel.
  */
 class SettingsForm extends ConfigFormBase {
 

@@ -1,20 +1,18 @@
-uuid: 34ffade9-34fb-48bd-bd0b-bbd81c04b349
+uuid: 4ab8f2b1-6b24-43f7-ab85-bb017fee0481
 langcode: en
 status: true
 dependencies:
-  module:
-    - plugin_api
   theme:
     - supertheme
-id: plugin_api_example
+id: my_title
 theme: supertheme
 region: footer_top
 weight: 0
 provider: null
 plugin: plugin_api_example
 settings:
-  id: plugin_api_example
-  label: 'Example plugin api '
+  id: null
+  label: 'Last node with image'
   label_display: visible
-  provider: plugin_api
+  provider: null
 visibility: {  }
