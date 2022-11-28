@@ -7,32 +7,46 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Default configure Plugin API settings for this site make by drush
- * TODO Make it possible to edit the plugin configuration using admin panel.
+ *
  */
-class SettingsForm extends ConfigFormBase {
+class SettingsForm extends ConfigFormBase
+{
 
   /**
    * {@inheritdoc}
    */
-  public function getFormId() {
+  public function getFormId()
+  {
     return 'plugin_api_settings';
   }
 
   /**
    * {@inheritdoc}
    */
-  protected function getEditableConfigNames() {
+  protected function getEditableConfigNames()
+  {
     return ['plugin_api.settings'];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state)
+  {
     $form['example'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Example'),
       '#default_value' => $this->config('plugin_api.settings')->get('example'),
+    ];
+    $form['node_count'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Node count'),
+      '#default_value' => $this->config('plugin_api.settings')->get('node_count'),
+    ];
+    $form['node_type'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Node type'),
+      '#default_value' => $this->config('plugin_api.settings')->get('node_type'),
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -40,9 +54,13 @@ class SettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    if ($form_state->getValue('example') != 'example') {
-      $form_state->setErrorByName('example', $this->t('The value is not correct.'));
+  public function validateForm(array &$form, FormStateInterface $form_state)
+  {
+    if ($form_state->getValue('node_count') > 5) {
+      $form_state->setErrorByName('node_count', $this->t('The value is not correct.'));
+    }
+    if (!in_array($form_state->getValue('node_type'), ['blog', 'article'])) {
+      $form_state->setErrorByName('node_type', $this->t('The value is not correct.'));
     }
     parent::validateForm($form, $form_state);
   }
@@ -50,9 +68,11 @@ class SettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state)
+  {
     $this->config('plugin_api.settings')
-      ->set('example', $form_state->getValue('example'))
+      ->set('node_count', $form_state->getValue('node_count'))
+      ->set('node_type', $form_state->getValue('node_type'))
       ->save();
     parent::submitForm($form, $form_state);
   }

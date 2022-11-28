@@ -5,21 +5,31 @@ namespace Drupal\plugin_api;
 use Drupal\Component\DependencyInjection\ContainerInterface;
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
-class NodeManager {
+class NodeManager
+{
 
   /**
    * @var EntityTypeManagerInterface
    */
   protected EntityTypeManagerInterface $entity;
+  /**
+   * @var ConfigFactory
+   */
+  protected ConfigFactory $configFactory;
 
 
   /**
    * @param EntityTypeManagerInterface $entity
+   * @param ConfigFactory $configFactory
    */
-  public function __construct(EntityTypeManagerInterface $entity) {
+  public function __construct(EntityTypeManagerInterface $entity, ConfigFactory $configFactory)
+  {
     $this->entity = $entity;
+    $this->configFactory = $configFactory;
+
   }
 
   /**
@@ -30,8 +40,10 @@ class NodeManager {
   {
     return new static(
       $container->get('entity_type.manager'),
+      $container->get('config.factory'),
     );
   }
+
 
   /**
    * @throws InvalidPluginDefinitionException
@@ -39,27 +51,32 @@ class NodeManager {
    */
   public function getNodesFields(): array
   {
-
+    $result = [];
+    $config = $this->configFactory->get('plugin_api.settings');
     $nodeStorage = $this->entity->getStorage('node');
+    $nodeType = $config->get('node_type');
+    $nodeCount = $config->get('node_count');
 
-    $nodesIds = $nodeStorage->getQuery()
-      ->exists('field_preview_picture')
-      // ->condition('type', 'article') // type = bundle id (machine name)
-      ->sort('created', 'ASC') // sorted by time of creation
-      ->pager(4) // limit 4 items
-      //->range(0, 10)
-      ->execute();
+    $query = $nodeStorage->getQuery()
+      ->exists('field_preview_picture');
 
+    if ($nodeType) {
+      $query->condition('type', $nodeType);
+    }
+
+    if ($nodeCount) {
+      $query->pager($nodeCount);
+    }
+
+    $nodesIds = $query->sort('created', 'ASC')->execute();
     $articles = $nodeStorage->loadMultiple($nodesIds);
-    $rez=[];
 
     foreach ($articles as $key => $article) {
       $uri = $article->get('field_preview_picture')->entity->uri->value;
-      $rez[$key]['url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
-      $rez[$key]['title'] = $article->get('title')->getValue('value');
+      $result[$key]['url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+      $result[$key]['title'] = $article->get('title')->getValue('value');
     }
 
-    return $rez;
+    return $result;
   }
-
 }

@@ -12,7 +12,7 @@ provider: null
 plugin: plugin_api_example
 settings:
   id: null
-  label: 'Last node with image'
+  label: 'my title'
   label_display: visible
   provider: null
 visibility: {  }

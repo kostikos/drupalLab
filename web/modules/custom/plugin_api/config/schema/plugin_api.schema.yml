@@ -6,3 +6,9 @@ plugin_api.settings:
     example:
       type: string
       label: 'Example'
+    node_count:
+      type: integer
+      label: 'Nodes count per page'
+    node_type:
+      type: string
+      label: 'Node type (example: blog, news, article)'

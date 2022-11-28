@@ -16,7 +16,7 @@ class PluginApiController extends ControllerBase
   public function build()
   {
     $block_manager = \Drupal::service('plugin.manager.block');
-    $config = [];
+    $config = ['node_count' => '2'];
     $block_plugin = $block_manager->createInstance('plugin_api_example', $config);
     $render = $block_plugin->build();
 
