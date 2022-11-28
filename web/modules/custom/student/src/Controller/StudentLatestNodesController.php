@@ -19,13 +19,13 @@ class StudentLatestNodesController extends ControllerBase
     $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
     $ids = $nodeStorage->getQuery()
       ->exists('field_preview_picture')
-      // ->condition('type', 'article') // type = bundle id (machine name)
-      ->sort('created', 'ASC') // sorted by time of creation
-      ->pager(4) // limit 4 items
-      //->range(0, 10)
+      ->sort('created')
+      ->pager(4)
       ->execute();
 
     $articles = $nodeStorage->loadMultiple($ids);
+    $rez = [];
+
     foreach ($articles as $key => $article) {
       $uri = $article->get('field_preview_picture')->entity->uri->value;
       $rez[$key]['url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
