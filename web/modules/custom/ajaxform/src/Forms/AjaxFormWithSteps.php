@@ -155,6 +155,8 @@ class AjaxFormWithSteps extends FormBase
 
   public function myAjaxCallback(array &$form, FormStateInterface $form_state)
   {
+    $this->messenger()->addStatus('ajax done !');
+
     return $form;
 
   }
@@ -195,6 +197,8 @@ class AjaxFormWithSteps extends FormBase
 
   public function nextSubmit(array &$form, FormStateInterface $form_state)
   {
+    $this->messenger()->addStatus('submit  done !');
+
     $step = $form_state->get('step') ?? 1;
 
     // Save step data.
