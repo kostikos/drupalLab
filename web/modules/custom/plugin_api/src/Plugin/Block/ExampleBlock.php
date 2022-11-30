@@ -48,7 +48,7 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('plugin_api.latest_node')
+      $container->get('plugin_api.latest_node'),
     );
   }
 
@@ -58,6 +58,7 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface
   public function build(): array
   {
     $node = $this->nodeWithImage->getNodesFields();
+
     $build[] = [
       '#theme' => 'plugin_api_theme',
       '#node' => $node,
