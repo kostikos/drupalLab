@@ -1,0 +1,4 @@
+example: 'This is example value from install->plugin_api.settings file'
+node_count: 1
+node_type: 'blog'
+langcode: en

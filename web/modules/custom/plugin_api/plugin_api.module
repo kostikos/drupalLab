@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Plugin API module.
+ */
+
+
+/**
+ * Implements hook_theme().
+ */
+function plugin_api_theme($existing, $type, $theme, $path)
+{
+  return [
+    'plugin_api_theme' => [
+      'variables' => [
+        'node' => [],
+      ],
+    ],
+
+  ];
+}

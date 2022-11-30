@@ -1,0 +1,20 @@
+uuid: 2b8062de-d73d-4100-88d3-e40e7b6df7d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - plugin_api
+  theme:
+    - supertheme
+id: exampleplugin
+theme: supertheme
+region: footer_top
+weight: 0
+provider: null
+plugin: plugin_api_example
+settings:
+  id: plugin_api_example
+  label: 'Example plugin'
+  label_display: visible
+  provider: plugin_api
+visibility: {  }

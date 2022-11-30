@@ -1,0 +1,4 @@
+services:
+  plugin_api.latest_node:
+    class: Drupal\plugin_api\NodeManager
+    arguments: [ '@entity_type.manager',  '@config.factory' ]

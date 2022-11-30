@@ -1,0 +1,14 @@
+# Schema for the configuration files of the Plugin API module.
+plugin_api.settings:
+  type: config_object
+  label: 'Plugin API settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
+    node_count:
+      type: integer
+      label: 'Nodes count per page'
+    node_type:
+      type: string
+      label: 'Node type (example: blog, news, article)'

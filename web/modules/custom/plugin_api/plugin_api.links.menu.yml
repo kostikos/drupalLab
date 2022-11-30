@@ -1,0 +1,6 @@
+plugin_api.settings_form:
+  title: 'Plugin API'
+  description: 'Configure Plugin API.'
+  parent: system.admin_config_system
+  route_name: plugin_api.settings_form
+  weight: 10

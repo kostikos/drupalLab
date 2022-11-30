@@ -52,7 +52,6 @@ class StudentregistrationController extends ControllerBase
    */
   public function build(Request $request)
   {
-    var_dump($current_path = $this->pathCurrent->getPath());
     if ($request->query->has('result_id')) {
       $studentId = $request->query->get('result_id');
       $query = $this->databasee->select('students')
