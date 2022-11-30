@@ -155,6 +155,8 @@ class AjaxFormWithSteps extends FormBase
 
   public function myAjaxCallback(array &$form, FormStateInterface $form_state)
   {
+    $this->messenger()->addStatus('ajax done !');
+
     return $form;
 
   }
@@ -165,7 +167,7 @@ class AjaxFormWithSteps extends FormBase
    */
   public function validateForm(array &$form, FormStateInterface $form_state)
   {
-    // Additional form validation put here.
+
   }
 
   /**
@@ -173,11 +175,17 @@ class AjaxFormWithSteps extends FormBase
    */
   public function submitForm(array &$form, FormStateInterface $form_state)
   {
-    //$this->messenger()->addStatus($this->t('Submit'));
-
     $values = $form_state->getValues();
     $data = $form_state->get('data') ?? [];
     $data = array_merge($data, $values);
+    unset($data['title']);
+    unset($data['form_build_id']);
+    unset($data['form_id']);
+    unset($data['prev']);
+    unset($data['ajax_page_state']);
+    unset($data['next']);
+    unset($data['save']);
+    unset($data['op']);
 
     foreach ($data as $key => $value) {
       $this->messenger()->addStatus($this->t(':key => :value', [
@@ -189,7 +197,7 @@ class AjaxFormWithSteps extends FormBase
 
   public function nextSubmit(array &$form, FormStateInterface $form_state)
   {
-    // $this->messenger()->addStatus($this->t('Next'));
+    $this->messenger()->addStatus('submit  done !');
 
     $step = $form_state->get('step') ?? 1;
 
@@ -205,8 +213,6 @@ class AjaxFormWithSteps extends FormBase
 
   public function prevSubmit(array &$form, FormStateInterface $form_state)
   {
-    // $this->messenger()->addStatus($this->t('Prev'));
-
     $step = $form_state->get('step') ?? 1;
 
     // Save step data.

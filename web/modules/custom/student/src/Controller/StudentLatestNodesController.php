@@ -3,38 +3,58 @@
 namespace Drupal\student\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Database\Connection;
+use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\student\NodeWithImages;
 
 /**
  * Returns responses for Render Arrays routes.
  */
-class StudentLatestNodesController extends ControllerBase
+class StudentLatestNodesController extends ControllerBase implements ContainerInjectionInterface
 {
+
+  /**
+   * Active database connection.
+   *
+   * @var Connection
+   */
+  protected $database;
+  protected $nodeWithImage;
+
+
+  /**
+   * Constructs object.
+   *
+   * @param Connection $database
+   *   The database connection to be used.
+   */
+  public function __construct(Connection $database, NodeWithImages $nodeWithImages)
+  {
+    $this->database = $database;
+    $this->nodeWithImage = $nodeWithImages;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container)
+  {
+    return new static(
+      $container->get('database'),
+      $container->get('student.service1'),
+    );
+  }
+
 
   /**
    * Builds the response.
    */
   public function build()
   {
-
-    $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
-    $ids = $nodeStorage->getQuery()
-      ->exists('field_preview_picture')
-      ->sort('created')
-      ->pager(4)
-      ->execute();
-
-    $articles = $nodeStorage->loadMultiple($ids);
-    $rez = [];
-
-    foreach ($articles as $key => $article) {
-      $uri = $article->get('field_preview_picture')->entity->uri->value;
-      $rez[$key]['url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
-      $rez[$key]['title'] = $article->get('title')->getValue('value');
-    }
-
     $build[] = [
       '#theme' => 'student_latest_node_theme',
-      '#items' => $rez,
+      '#items' => $this->nodeWithImage->getNodesFields(),
       '#otherr' => 5,
     ];
 

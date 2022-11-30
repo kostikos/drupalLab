@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a node.
+ *
+*/
+#}
+
+<article>
+  {% for item in node %}
+    <div class="student-wrapper">
+      <div class="student-img"><img src="{{ item.url }}" alt="{{ item.title[0].value }}"></div>
+      <div class="student-text">{{ item.title[0].value }}</div>
+    </div>
+  {% endfor %}
+</article>
