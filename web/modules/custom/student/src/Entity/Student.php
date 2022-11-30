@@ -59,9 +59,7 @@ class Student extends ContentEntityBase implements StudentInterface
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type)
   {
-
     $fields = parent::baseFieldDefinitions($entity_type);
-
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Student name'))
@@ -133,8 +131,8 @@ class Student extends ContentEntityBase implements StudentInterface
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['dob'] = BaseFieldDefinition::create('datetime')
-      ->setLabel(t('Student telephone'))
-      ->setDescription(t('Student`s telephone.'))
+      ->setLabel(t('Student date of birthday'))
+      ->setDescription(t('Student`s date of birthday.'))
       ->setRequired(FALSE)
       ->setSettings(array(
         'max_length' => 16,
@@ -170,7 +168,6 @@ class Student extends ContentEntityBase implements StudentInterface
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-
 
     $fields['gender'] = BaseFieldDefinition::create('list_string')
       ->setSettings([
@@ -216,9 +213,6 @@ class Student extends ContentEntityBase implements StudentInterface
       ])
       ->setDisplayConfigurable('view', TRUE);
 
-
-
     return $fields;
   }
-
 }
