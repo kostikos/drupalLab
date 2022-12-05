@@ -3,4 +3,3 @@ type: module
 description: My module with entity query examples
 core_version_requirement: ^9 || ^10
 package: Custom
-

@@ -2,21 +2,26 @@
 
 namespace Drupal\mymodule\Forms;
 
-use Drupal\Core\Form\FormBase,
-  Drupal\Core\Form\FormStateInterface,
-  Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
-class FirstForm extends FormBase
-{
+/**
+ * Simple class for demonstration form work.
+ */
+class FirstForm extends FormBase {
 
-  public function getFormId()
-  {
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId() {
     return 'mymodule_firstform';
   }
 
-  public function buildForm(array $form, FormStateInterface $form_state): array
-  {
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state): array {
 
     $form['#method'] = 'POST';
 
@@ -40,40 +45,34 @@ class FirstForm extends FormBase
       '#value' => \Drupal::currentUser()->id(),
     ];
 
-
     $form['gender'] = [
       '#type' => 'select',
       '#title' => t('Gender'),
       '#description' => t('Select gender.'),
-      '#options' => array(
+      '#options' => [
         'Male' => t('Male'),
         'Female' => t('Female'),
         'other' => t('other'),
-      ),
+      ],
     ];
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Send'),
     ];
-//    $form['reset2'] = array(
-//      '#type' => 'submit',
-//      '#value' => t('Reset'),
-//      '#submit' => array('::resetForm'),
-//    );
 
     return $form;
   }
 
-  public function submitForm(array &$form, FormStateInterface $form_state)
-  {
-    // TODO: Implement submitForm() method.
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
     /* $form_object = $this->getFormObject($form_state);
-     $form_object->submitForm($form, $form_state);
- */
+    $form_object->submitForm($form, $form_state);
+     */
 
-    //ksm($form_state->getValues());
+    // ksm($form_state->getValues());
     $arResult = $form_state->getValues();
-
 
     if ($arResult['op'] == 'submit') {
       unset($arResult['submit']);
@@ -83,12 +82,12 @@ class FirstForm extends FormBase
       unset($arResult['op']);
       $url = Url::fromRoute('mymodule.forms.result', $arResult);
       $form_state->setRedirectUrl($url);
-    } else {
+    }
+    else {
 
-      $form_state->setRebuild(false);
+      $form_state->setRebuild(FALSE);
     }
 
   }
 
 }
-

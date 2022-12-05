@@ -13,8 +13,7 @@ class FormResaultPage extends ControllerBase {
   /**
    * Builds the response.
    */
-  public function build(Request $request): array
-  {
+  public function build(Request $request): array {
 
     $build[] = [
       '#theme' => 'mymodule_form_result',

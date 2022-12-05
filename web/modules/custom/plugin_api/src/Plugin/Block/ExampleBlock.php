@@ -2,12 +2,10 @@
 
 namespace Drupal\plugin_api\Plugin\Block;
 
-
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\plugin_api\NodeManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-
 
 /**
  * Provides an example block.
@@ -18,32 +16,27 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   category = @Translation("Plugin API")
  * )
  */
-class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface
-{
+class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
+  /**
+   * Node manager object.
+   *
+   * @var \Drupal\plugin_api\NodeManager
+   */
   protected NodeManager $nodeWithImage;
 
   /**
-   * @param array $configuration
-   * @param string $plugin_id
-   * @param mixed $plugin_definition
-   * @param NodeManager $nodeWithImages
+   * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, NodeManager $nodeWithImages)
-  {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, NodeManager $nodeWithImages) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->nodeWithImage = $nodeWithImages;
   }
 
   /**
-   * @param ContainerInterface $container
-   * @param array $configuration
-   * @param $plugin_id
-   * @param $plugin_definition
-   * @return ExampleBlock|static
+   * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
-  {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
       $configuration,
       $plugin_id,
@@ -55,8 +48,7 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface
   /**
    * {@inheritdoc}
    */
-  public function build(): array
-  {
+  public function build(): array {
     $node = $this->nodeWithImage->getNodesFields();
 
     $build[] = [
@@ -66,4 +58,5 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface
 
     return $build;
   }
+
 }

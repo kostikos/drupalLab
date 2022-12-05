@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
- * studentregistration event subscriber.
+ * Studentregistration event subscriber.
  */
 class StudentregistrationSubscriber implements EventSubscriberInterface {
 

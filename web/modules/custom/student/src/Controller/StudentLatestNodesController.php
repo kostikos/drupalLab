@@ -11,26 +11,38 @@ use Drupal\student\NodeWithImages;
 /**
  * Returns responses for Render Arrays routes.
  */
-class StudentLatestNodesController extends ControllerBase implements ContainerInjectionInterface
-{
+class StudentLatestNodesController extends ControllerBase implements ContainerInjectionInterface {
 
   /**
    * Active database connection.
    *
-   * @var Connection
+   * @var \Drupal\Core\Database\Connection
    */
-  protected $database;
-  protected $nodeWithImage;
+  protected Connection $database;
 
+  /**
+   * Custom nodes data manager.
+   *
+   * @var \Drupal\student\NodeWithImages
+   */
+  protected NodeWithImages $nodeWithImage;
 
   /**
    * Constructs object.
    *
-   * @param Connection $database
+   * @param \Drupal\Core\Database\Connection $database
    *   The database connection to be used.
    */
-  public function __construct(Connection $database, NodeWithImages $nodeWithImages)
-  {
+
+  /**
+   * Constructs object.
+   *
+   * @param \Drupal\Core\Database\Connection $database
+   *   Database connection.
+   * @param \Drupal\student\NodeWithImages $nodeWithImages
+   *   Custom nodes data-manager.
+   */
+  public function __construct(Connection $database, NodeWithImages $nodeWithImages) {
     $this->database = $database;
     $this->nodeWithImage = $nodeWithImages;
   }
@@ -38,20 +50,17 @@ class StudentLatestNodesController extends ControllerBase implements ContainerIn
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container)
-  {
+  public static function create(ContainerInterface $container) {
     return new static(
       $container->get('database'),
       $container->get('student.service1'),
     );
   }
 
-
   /**
    * Builds the response.
    */
-  public function build()
-  {
+  public function build() {
     $build[] = [
       '#theme' => 'student_latest_node_theme',
       '#items' => $this->nodeWithImage->getNodesFields(),

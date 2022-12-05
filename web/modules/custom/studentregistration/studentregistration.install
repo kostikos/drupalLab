@@ -3,108 +3,92 @@
 /**
  * @file
  * Install, update, and uninstall functions for studentregistration.
- *
  */
+
+use Drupal\Core\Database\Database;
 
 /**
  * Implements hoo_install().
- * @return void
  */
-function studentregistration_install()
-{
+function studentregistration_install() {
 
   studentregistration_update_8002();
   studentregistration_update_8003();
 }
 
 /**
- * Implements hoo_uninstall().
- * @return void
- */
-function studentregistration_uninstall()
-{
-
-  // Remove the styles directory and generated images.
-  //file_unmanaged_delete_recursive(file_default_scheme() . '://styles');
-}
-
-/**
  * Implements hook_schema().
- * @return array
  */
-function studentregistration_schema()
-{
-  $schema['students'] = array(
+function studentregistration_schema() {
+  $schema['students'] = [
     // Example (partial) specification for table "students".
     'description' => 'The base table for students.',
-    'fields' => array(
-      'uid' => array(
+    'fields' => [
+      'uid' => [
         'description' => 'The primary identifier for a student.',
         'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,
-      ),
-      'name' => array(
+      ],
+      'name' => [
         'description' => 'The student name.',
         'type' => 'varchar',
         'length' => 255,
         'not null' => TRUE,
         'default' => '',
-      ),
-      'rollnumner' => array(
+      ],
+      'rollnumner' => [
         'description' => 'The student enroll-number.',
         'type' => 'varchar',
         'length' => 30,
         'not null' => TRUE,
         'default' => '',
-      ),
-      'email' => array(
+      ],
+      'email' => [
         'description' => 'The student email.',
         'type' => 'varchar',
         'length' => 30,
         'not null' => TRUE,
         'default' => '',
-      ),
-      'phone' => array(
+      ],
+      'phone' => [
         'description' => 'The student phone.',
         'type' => 'varchar',
         'length' => 20,
         'not null' => TRUE,
         'default' => '',
-      ),
-      'dob' => array(
+      ],
+      'dob' => [
         'description' => 'The student date of birthday.',
         'type' => 'varchar',
         'length' => 15,
         'not null' => TRUE,
         'default' => '',
-      ),
-      'gender' => array(
+      ],
+      'gender' => [
         'description' => 'The student gender.',
         'type' => 'varchar',
         'length' => 15,
         'not null' => TRUE,
         'default' => '',
-      ),
-    ),
-    'unique keys' => array(
-      'uid' => array(
+      ],
+    ],
+    'unique keys' => [
+      'uid' => [
         'uid',
-      ),
-    ),
-    'primary key' => array(
+      ],
+    ],
+    'primary key' => [
       'uid',
-    ),
-  );
+    ],
+  ];
   return $schema;
 }
 
 /**
  * Implements hook_update().
- *
  */
-function studentregistration_update_8002()
-{
+function studentregistration_update_8002() {
   $average_mark = [
     'type' => 'float',
     'size' => 'normal',
@@ -112,17 +96,15 @@ function studentregistration_update_8002()
     'not null' => TRUE,
     'default' => 0,
   ];
-  $schema = \Drupal\Core\Database\Database::getConnection()->schema();
+  $schema = Database::getConnection()->schema();
   $schema->addField('students', 'average_mark', $average_mark);
 
 }
 
 /**
  * Implements hook_update().
- *
  */
-function studentregistration_update_8003()
-{
+function studentregistration_update_8003() {
 
   $database = \Drupal::database();
   $query = $database->select('students')
@@ -132,7 +114,7 @@ function studentregistration_update_8003()
 
   if ($arResult) {
     foreach ($arResult as $item) {
-      $avgUpdated = \Drupal\Core\Database\Database::getConnection()->update('students')
+      $avgUpdated = Database::getConnection()->update('students')
         ->fields([
           'average_mark' => rand(1, 12),
         ])

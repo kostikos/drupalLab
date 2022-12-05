@@ -2,13 +2,23 @@
 
 namespace Drupal\mymodule\Controller;
 
-class FirstController
-{
+use Drupal\Core\Controller\ControllerBase;
 
-  public function content()
-  {
+/**
+ * Example simple controller.
+ */
+class FirstController extends ControllerBase {
+
+  /**
+   * Simple controller realisation.
+   *
+   * @return string[]
+   *   test markup.
+   */
+  public function content() {
     return [
       '#markup' => 'Test',
     ];
   }
+
 }

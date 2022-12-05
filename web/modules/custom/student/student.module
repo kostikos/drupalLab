@@ -18,13 +18,12 @@ function student_theme() {
     'student_latest_node_theme' => [
       'variables' => [
         'items' => [],
-        'otherr'=>NULL,
+        'otherr' => NULL,
       ],
 
     ],
   ];
 }
-
 
 /**
  * Prepares variables for student templates.
@@ -43,4 +42,3 @@ function template_preprocess_student(array &$variables) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
 }
-
