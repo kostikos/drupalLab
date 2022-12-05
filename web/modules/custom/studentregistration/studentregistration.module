@@ -5,14 +5,10 @@
  * Functions to support theming in the Olivero theme.
  */
 
-use \Drupal\Core\Form;
-
-
 /**
  * Implements hook_theme().
  */
-function studentregistration_theme($existing, $type, $theme, $path)
-{
+function studentregistration_theme($existing, $type, $theme, $path) {
   return [
     'studentregistration_result' => [
       'variables' => [
@@ -23,7 +19,7 @@ function studentregistration_theme($existing, $type, $theme, $path)
         'phone' => NULL,
         'dob' => NULL,
         'gender' => NULL,
-        'average_mark'=>NULL,
+        'average_mark' => NULL,
       ],
     ],
     'studentregistration_list' => [

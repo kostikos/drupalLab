@@ -19,7 +19,7 @@ class StudentListBuilder extends EntityListBuilder {
    *
    * @var \Drupal\Core\Datetime\DateFormatterInterface
    */
-  protected $dateFormatter;
+  protected DateFormatterInterface $dateFormatter;
 
   /**
    * Constructs a new StudentListBuilder object.
@@ -81,23 +81,28 @@ class StudentListBuilder extends EntityListBuilder {
 
   /**
    * {@inheritdoc}
-   *
-   * TODO Check the correct setting of the variable  (->getValue()[0]['value'] ) ????
-   *
-   *
    */
   public function buildRow(EntityInterface $entity) {
 
     $row['id'] = $entity->id();
-    $row['name'] = $entity->get('surname')->getValue()[0]['value'];
-    //$row['name'] = $entity->get('surname')->getValue(0)->getValue('value')->getValue();
-    $row['surname'] = $entity->get('surname')->getValue()[0]['value'];
-    $row['email'] =$entity->get('email')->getValue()[0]['value'];
-    $row['phone'] = $entity->get('phone')->getValue()[0]['value'];
-    $row['age'] = $entity->get('age')->getValue()[0]['value'];
-    $row['dob'] = $entity->get('dob')->getValue()[0]['value'];
-    $row['gender'] = $entity->get('gender')->getValue()[0]['value'];
-    $row['group_id'] = $entity->get('group_id')->getValue()[0]['value'];
+    $row['name'] = $entity->get('surname')->getValue(0)->getValue('value')
+      ->getValue();
+    // $row['name'] = $entity->get('surname')->getValue(0)->getValue('value')
+    // ->getValue();
+    $row['surname'] = $entity->get('surname')->getValue(0)->getValue('value')
+      ->getValue();
+    $row['email'] = $entity->get('email')->getValue(0)->getValue('value')
+      ->getValue();
+    $row['phone'] = $entity->get('phone')->getValue(0)->getValue('value')
+      ->getValue();
+    $row['age'] = $entity->get('age')->getValue(0)->getValue('value')
+      ->getValue();
+    $row['dob'] = $entity->get('dob')->getValue(0)->getValue('value')
+      ->getValue();
+    $row['gender'] = $entity->get('gender')->getValue(0)->getValue('value')
+      ->getValue();
+    $row['group_id'] = $entity->get('group_id')->getValue(0)->getValue('value')
+      ->getValue();
     return $row + parent::buildRow($entity);
   }
 

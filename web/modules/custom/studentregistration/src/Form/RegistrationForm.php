@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\student_registration\Form\RegistrationForm.
- */
 
 namespace Drupal\studentregistration\Form;
 
@@ -10,12 +6,19 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Database\Connection;
 
+/**
+ * Student registration form.
+ */
+class RegistrationForm extends FormBase {
 
-class RegistrationForm extends FormBase
-{
-
-  protected $database;
+  /**
+   * Database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected Connection $database;
 
   /**
    * {@inheritdoc}
@@ -30,64 +33,67 @@ class RegistrationForm extends FormBase
   /**
    * {@inheritdoc}
    */
-  public function getFormId(): string
-  {
+  public function getFormId(): string {
     return 'student_registration_form';
   }
 
-  public function buildForm(array $form, FormStateInterface $form_state): array
-  {
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state): array {
     $form['#method'] = 'POST';
 
-    $form['name'] = array(
+    $form['name'] = [
       '#type' => 'textfield',
       '#title' => t('Enter Name:'),
       '#required' => TRUE,
-    );
-    $form['rollnumner'] = array(
+    ];
+    $form['rollnumner'] = [
       '#type' => 'textfield',
       '#title' => t('Enter Enrollment Number:'),
       '#required' => TRUE,
-    );
-    $form['email'] = array(
+    ];
+    $form['email'] = [
       '#type' => 'email',
       '#title' => t('Enter Email ID:'),
       '#required' => TRUE,
-    );
-    $form['phone'] = array(
+    ];
+    $form['phone'] = [
       '#type' => 'tel',
       '#title' => t('Enter Contact Number'),
-    );
-    $form['dob'] = array(
+    ];
+    $form['dob'] = [
       '#type' => 'date',
       '#title' => t('Enter DOB:'),
       '#required' => TRUE,
-    );
-    $form['gender'] = array(
+    ];
+    $form['gender'] = [
       '#type' => 'select',
       '#title' => ('Select Gender:'),
-      '#options' => array(
+      '#options' => [
         'Male' => t('Male'),
         'Female' => t('Female'),
         'Other' => t('Other'),
-      ),
-    );
-    $form['average_mark'] = array(
+      ],
+    ];
+    $form['average_mark'] = [
       '#type' => 'textfield',
       '#title' => t('Average mark:'),
       '#required' => TRUE,
-    );
+    ];
     $form['actions']['#type'] = 'actions';
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Register'),
       '#button_type' => 'primary',
-    );
+    ];
     return $form;
   }
 
-  public function validateForm(array &$form, FormStateInterface $form_state)
-  {
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
     if (strlen($form_state->getValue('rollnumner')) < 8) {
       $form_state->setErrorByName('rollnumner', $this->t('Please enter a valid Enrollment Number'));
     }
@@ -96,8 +102,10 @@ class RegistrationForm extends FormBase
     }
   }
 
-  public function submitForm(array &$form, FormStateInterface $form_state)
-  {
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
     $arResult = $form_state->getValues();
     $query = $this->database->insert('students');
     $query->fields([
@@ -106,7 +114,7 @@ class RegistrationForm extends FormBase
       'email' => $arResult['email'],
       'phone' => $arResult['phone'],
       'dob' => $arResult['dob'],
-      'average_mark'=>$arResult['average_mark'],
+      'average_mark' => $arResult['average_mark'],
       'gender' => $arResult['gender'],
     ]);
     $resulrId['id'] = $query->execute();

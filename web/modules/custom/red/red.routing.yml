@@ -5,4 +5,3 @@ red.example:
     _controller: '\Drupal\red\Controller\RedController::build'
   requirements:
     _permission: 'access content'
-

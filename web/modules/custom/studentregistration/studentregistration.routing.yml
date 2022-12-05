@@ -36,4 +36,3 @@ studentregistration.form.delet:
     _form: '\Drupal\studentregistration\Form\RegistrationFormDelete'
   requirements:
     _permission: 'access content'
-

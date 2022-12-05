@@ -49,25 +49,23 @@ use Drupal\student\StudentInterface;
  *   },
  * )
  */
-class Student extends ContentEntityBase implements StudentInterface
-{
+class Student extends ContentEntityBase implements StudentInterface {
 
   use EntityChangedTrait;
 
   /**
    * {@inheritdoc}
    */
-  public static function baseFieldDefinitions(EntityTypeInterface $entity_type)
-  {
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Student name'))
       ->setDescription(t('Student`s name.'))
       ->setRequired(TRUE)
-      ->setSettings(array(
+      ->setSettings([
         'max_length' => 255,
-      ))
+      ])
       ->setDisplayOptions('form', [
         'type' => 'text_textfield',
         'weight' => 9,
@@ -83,9 +81,9 @@ class Student extends ContentEntityBase implements StudentInterface
       ->setLabel(t('Student surname'))
       ->setDescription(t('Student`s surname.'))
       ->setRequired(FALSE)
-      ->setSettings(array(
+      ->setSettings([
         'max_length' => 255,
-      ))
+      ])
       ->setDisplayOptions('form', [
         'type' => 'text_textfield',
         'weight' => 10,
@@ -116,9 +114,9 @@ class Student extends ContentEntityBase implements StudentInterface
       ->setLabel(t('Student telephone'))
       ->setDescription(t('Student`s telephone.'))
       ->setRequired(FALSE)
-      ->setSettings(array(
+      ->setSettings([
         'max_length' => 16,
-      ))
+      ])
       ->setDisplayOptions('form', [
         'type' => 'telephone',
         'weight' => 12,
@@ -134,9 +132,9 @@ class Student extends ContentEntityBase implements StudentInterface
       ->setLabel(t('Student date of birthday'))
       ->setDescription(t('Student`s date of birthday.'))
       ->setRequired(FALSE)
-      ->setSettings(array(
+      ->setSettings([
         'max_length' => 16,
-      ))
+      ])
       ->setDisplayOptions('form', [
         'type' => 'datetime',
       ])
@@ -157,7 +155,8 @@ class Student extends ContentEntityBase implements StudentInterface
       ])
       ->setLabel(t('Student age'))
       ->setDescription(t('Student`s age.'))
-      ->setCardinality(1)   //count of selected elements
+    // Count of selected elements.
+      ->setCardinality(1)
       ->setDisplayOptions('view', [
         'type' => 'text_textfield',
         'weight' => 13,
@@ -177,13 +176,14 @@ class Student extends ContentEntityBase implements StudentInterface
           'other' => 'other',
         ],
       ])
-      ->setCardinality(1)   //count of selected elements
+    // Count of selected elements.
+      ->setCardinality(1)
       ->setLabel(t('Student gender'))
       ->setDescription(t('Student`s gender type.'))
       ->setRequired(FALSE)
-      ->setSettings(array(
+      ->setSettings([
         'max_length' => 8,
-      ))
+      ])
       ->setDisplayOptions('form', [
         'type' => 'options_select',
         'weight' => 14,
@@ -199,9 +199,9 @@ class Student extends ContentEntityBase implements StudentInterface
       ->setLabel(t('Student group id'))
       ->setDescription(t('Student group.'))
       ->setRequired(FALSE)
-      ->setSettings(array(
+      ->setSettings([
         'max_length' => 8,
-      ))
+      ])
       ->setDisplayOptions('form', [
         'type' => 'text_textfield',
         'weight' => 15,
@@ -215,4 +215,5 @@ class Student extends ContentEntityBase implements StudentInterface
 
     return $fields;
   }
+
 }

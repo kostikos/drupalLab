@@ -8,25 +8,25 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 
 /**
- * Our example form class
- */
-class AjaxSubmitDemo2  extends FormBase {
+ * Class for simple presentation ajax technology in forms.
+ */
+class AjaxSubmitDemo2 extends FormBase {
 
   /**
-   * {@inheritdoc}
+   * {@inheritDoc}
    */
   public function getFormId() {
     return 'ajax_submit_demo';
   }
 
   /**
-   * {@inheritdoc}
+   * {@inheritDoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     $form['message'] = [
       '#type' => 'markup',
-      '#markup' => '<div class="result_message"></div>'
+      '#markup' => '<div class="result_message"></div>',
     ];
 
     $form['number_1'] = [
@@ -51,7 +51,15 @@ class AjaxSubmitDemo2  extends FormBase {
   }
 
   /**
+   * Build custom ajax request.
    *
+   * @param array $form
+   *   Form fields.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   Form state.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Result messages.
    */
   public function setMessage(array $form, FormStateInterface $form_state) {
 
@@ -65,8 +73,11 @@ class AjaxSubmitDemo2  extends FormBase {
 
   }
 
-  public function submitForm(array &$form, FormStateInterface $form_state)
-  {
-    // TODO: Implement submitForm() method.
+  /**
+   * {@inheritDoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    // @todo Implement submitForm() method.
   }
+
 }
