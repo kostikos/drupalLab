@@ -1,0 +1,18 @@
+uuid: e9d39d0d-5d67-46c8-b597-6779d85d0634
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.new_members
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.new_members
+target_entity_type_id: node
+target_bundle: new_members
+default_langcode: site_default
+language_alterable: false

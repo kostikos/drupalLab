@@ -1,0 +1,22 @@
+uuid: 780f8c3c-b68b-4df0-904d-65340a20cc9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brochure_block
+id: block_content.brochure_block.status
+field_name: status
+entity_type: block_content
+bundle: brochure_block
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

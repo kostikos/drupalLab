@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.main_page_text.field_123
     - node.type.main_page_text
   module:
+    - content_moderation
     - text
 id: node.main_page_text.default
 targetEntityType: node
@@ -30,6 +31,19 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

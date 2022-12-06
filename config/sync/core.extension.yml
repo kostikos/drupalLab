@@ -5,7 +5,10 @@ module:
   admin_toolbar_links_access_filter: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
+  ajax_form_submit: 0
+  ajaxform: 0
   automated_cron: 0
+  backup_migrate: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -13,6 +16,7 @@ module:
   ckeditor5: 0
   comment: 0
   config: 0
+  config_translation: 0
   contact: 0
   content_moderation: 0
   contextual: 0
@@ -25,6 +29,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   exclude_node_title: 0
+  facets: 0
   field: 0
   field_ui: 0
   file: 0
@@ -32,9 +37,11 @@ module:
   help: 0
   history: 0
   image: 0
+  language: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0
+  locale: 0
   media: 0
   media_library: 0
   menu_link_content: 0
@@ -48,6 +55,9 @@ module:
   path_alias: 0
   plugin_api: 0
   search: 0
+  search_api: 0
+  search_api_solr: 0
+  search_api_solr_admin: 0
   shortcut: 0
   student: 0
   studentregistration: 0
@@ -63,6 +73,7 @@ module:
   views_ui: 0
   workflows: 0
   pathauto: 1
+  content_translation: 10
   views: 10
   standard: 1000
 theme:

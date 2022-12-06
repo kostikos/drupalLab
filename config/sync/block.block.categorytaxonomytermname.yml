@@ -1,0 +1,29 @@
+uuid: adc450a4-cf7d-4041-a301-7f78ff9304ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.category_taxonomy_term_name
+  module:
+    - facets
+    - system
+  theme:
+    - supertheme
+id: categorytaxonomytermname
+theme: supertheme
+region: content
+weight: -11
+provider: null
+plugin: 'facet_block:category_taxonomy_term_name'
+settings:
+  id: 'facet_block:category_taxonomy_term_name'
+  label: 'Category » Taxonomy term » Name'
+  label_display: '0'
+  provider: facets
+  context_mapping: {  }
+  block_id: categorytaxonomytermname
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /blogs-search
