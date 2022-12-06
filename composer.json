@@ -25,12 +25,14 @@
         "drupal/devel": "^5.0",
         "drupal/diff": "^1.1",
         "drupal/exclude_node_title": "^1.4",
+        "drupal/facets": "^2.0",
         "drupal/gin": "^3.0@beta",
         "drupal/pathauto": "^1.11",
         "drupal/redirect": "^1.8",
+        "drupal/search_api_solr": "^4.2",
         "drupal/token": "^1.11",
         "drupal/upgrade_status": "^3.17",
-        "drush/drush": "^11.2"
+        "drush/drush": "*"
     },
     "require-dev": {
         "drupal/coder": "^8.3",
