@@ -1,0 +1,20 @@
+uuid: 01564c86-a274-481e-b258-b15fb1fc4ecb
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.custom_img
+id: media.custom_img.name
+field_name: name
+entity_type: media
+bundle: custom_img
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 560830ba-8303-4cba-8105-009ac7b763c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.new_members
+  module:
+    - path
+id: node.new_members.path
+field_name: path
+entity_type: node
+bundle: new_members
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
