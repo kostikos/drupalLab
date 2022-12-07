@@ -1,0 +1,6 @@
+services:
+  event_dispatcher.event_subscriber:
+    class: Drupal\event_dispatcher\EventSubscriber\EventDispatcherSubscriber
+    arguments: ['@messenger', '@config.factory' ]
+    tags:
+      - { name: event_subscriber }

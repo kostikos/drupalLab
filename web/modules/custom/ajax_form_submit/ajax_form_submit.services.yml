@@ -1,0 +1,6 @@
+services:
+  ajax_form_submit_vent_dispatcher.event_subscriber:
+    class: Drupal\ajax_form_submit\EventSubscriber\MyFormSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }
