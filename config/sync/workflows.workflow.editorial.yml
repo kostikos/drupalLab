@@ -2,8 +2,6 @@ uuid: 91ea619d-ba10-4a07-930c-1e2849f0283f
 langcode: en
 status: true
 dependencies:
-  config:
-    - node.type.blog
   module:
     - content_moderation
 _core:
@@ -28,6 +26,11 @@ type_settings:
       weight: 0
       published: true
       default_revision: true
+    unpablish:
+      label: Unpablish
+      weight: 6
+      published: false
+      default_revision: false
   transitions:
     archive:
       label: Archive
@@ -61,7 +64,14 @@ type_settings:
         - published
       to: published
       weight: 1
-  entity_types:
-    node:
-      - blog
+    unpublish_my:
+      label: 'Unpublish my'
+      from:
+        - archived
+        - draft
+        - published
+        - unpablish
+      to: unpablish
+      weight: 5
+  entity_types: {  }
   default_moderation_state: draft

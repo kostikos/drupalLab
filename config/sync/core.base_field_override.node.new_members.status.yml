@@ -1,0 +1,22 @@
+uuid: cc32b653-1ff3-4428-b958-e048fc85561d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.new_members
+id: node.new_members.status
+field_name: status
+entity_type: node
+bundle: new_members
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

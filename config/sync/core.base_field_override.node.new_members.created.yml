@@ -1,0 +1,18 @@
+uuid: c4c69789-bd85-4b38-b949-717fe337e303
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.new_members
+id: node.new_members.created
+field_name: created
+entity_type: node
+bundle: new_members
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

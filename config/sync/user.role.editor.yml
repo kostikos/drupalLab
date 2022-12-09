@@ -9,6 +9,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - content_moderation
+    - content_translation
     - exclude_node_title
     - node
     - taxonomy
@@ -25,14 +26,17 @@ permissions:
   - 'create blog content'
   - 'create terms in category'
   - 'create terms in tags'
+  - 'delete any blog content'
   - 'delete blog revisions'
   - 'delete own blog content'
   - 'delete terms in category'
   - 'delete terms in tags'
+  - 'edit any blog content'
   - 'edit own blog content'
   - 'edit terms in category'
   - 'edit terms in tags'
   - 'revert blog revisions'
+  - 'translate blog node'
   - 'use editorial transition create_new_draft'
   - 'use exclude node title'
   - 'view any unpublished content'
