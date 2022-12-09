@@ -1,0 +1,15 @@
+event_dispatcher.example:
+  path: '/event-dispatcher/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\event_dispatcher\Controller\EventDispatcherController::build'
+  requirements:
+    _permission: 'access content'
+
+event_dispatcher.settings_form:
+  path: '/admin/config/system/event_dispatcher'
+  defaults:
+    _title: 'Plugin API settings'
+    _form: 'Drupal\event_dispatcher\Form\SettingsForm'
+  requirements:
+    _permission: 'administer plugin_api configuration'

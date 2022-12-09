@@ -1,0 +1,6 @@
+event_dispatcher.settings_form:
+  title: 'Event dispatcher params'
+  description: 'Configure Plugin Event dispatcher.'
+  parent: system.admin_config_system
+  route_name: event_dispatcher.settings_form
+  weight: 10
