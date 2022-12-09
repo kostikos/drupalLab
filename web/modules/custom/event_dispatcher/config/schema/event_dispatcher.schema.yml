@@ -1,0 +1,11 @@
+# Schema for the configuration files of the event_dispatcher module.
+plugin_api.settings:
+  type: config_object
+  label: 'Event dispatcher settings'
+  mapping:
+    query_name:
+      type: string
+      label: 'Name of param what you want to add.'
+    query_value:
+      type: string
+      label: 'Value of param what you want to add.'

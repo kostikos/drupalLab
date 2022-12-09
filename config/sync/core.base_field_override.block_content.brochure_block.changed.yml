@@ -1,0 +1,18 @@
+uuid: 8a7a52fa-71d6-47a6-924a-7ecf3b90b181
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brochure_block
+id: block_content.brochure_block.changed
+field_name: changed
+entity_type: block_content
+bundle: brochure_block
+label: Changed
+description: 'The time that the custom block was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

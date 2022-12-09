@@ -9,6 +9,7 @@ dependencies:
     - node.type.main_page_text
   module:
     - layout_builder
+    - layout_discovery
     - text
     - user
 third_party_settings:
@@ -68,3 +69,5 @@ content:
     region: content
 hidden:
   field_123: true
+  langcode: true
+  search_api_excerpt: true

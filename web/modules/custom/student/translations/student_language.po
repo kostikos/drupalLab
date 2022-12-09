@@ -1,0 +1,68 @@
+# Ukrainian translation of Drupal Site!
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2022-12-06 10:36+0000\n"
+"PO-Revision-Date: 2022-12-06 10:36+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+
+msgid "View"
+msgstr "Вюха"
+
+msgid "New student %label has been created."
+msgstr "Нового студента %label створено."
+
+msgid "The student %label has been updated."
+msgstr "Дані студента  %label  оновлено."
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Age"
+msgstr "Вік"
+
+msgid "Date of birthday"
+msgstr "Дата народження"
+
+msgid "Gender"
+msgstr "Стать"
+
+msgid "Group id"
+msgstr "Ід групи"
+
+msgid "Student name"
+msgstr "Ім'я студента"
+
+msgid "Student surname"
+msgstr "Прізвище тудента"
+
+msgid "Student`s email."
+msgstr "Пошта студента"
+
+msgid "Student telephone"
+msgstr "Телфон студента"
+
+msgid "Student date of birthday"
+msgstr "Дата народження студента"
+
+msgid "Student age"
+msgstr "Вік студента"
+
+msgid "Student gender"
+msgstr "Гендер студента"
+
+msgid "Student group id"
+msgstr "Ід групи студента"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""

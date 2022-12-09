@@ -5,4 +5,3 @@ student.example:
     _controller: '\Drupal\student\Controller\StudentLatestNodesController::build'
   requirements:
     _permission: 'access content'
-

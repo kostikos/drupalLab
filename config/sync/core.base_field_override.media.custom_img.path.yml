@@ -1,0 +1,20 @@
+uuid: 047597a7-a06b-45d9-8518-8fb59cc0dc14
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.custom_img
+  module:
+    - path
+id: media.custom_img.path
+field_name: path
+entity_type: media
+bundle: custom_img
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

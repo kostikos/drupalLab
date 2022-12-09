@@ -11,26 +11,26 @@ use Drupal\Core\Path\CurrentPathStack;
 /**
  * Returns responses for studentregistration routes.
  */
-class StudentregistrationController extends ControllerBase
-{
+class StudentregistrationController extends ControllerBase {
 
   /**
    * Active database connection.
    *
-   * @var Connection
+   * @var \Drupal\Core\Database\Connection
    */
   protected $database;
 
-  protected $pathCurrent;
+  /**
+   * Current path stack.
+   *
+   * @var \Drupal\Core\Path\CurrentPathStack
+   */
+  protected CurrentPathStack $pathCurrent;
 
   /**
-   * Constructs object.
-   *
-   * @param Connection $database
-   *   The database connection to be used.
+   * {@inheritdoc}
    */
-  public function __construct(Connection $database, CurrentPathStack $pathCurrent )
-  {
+  public function __construct(Connection $database, CurrentPathStack $pathCurrent) {
     $this->database = $database;
     $this->pathCurrent = $pathCurrent;
   }
@@ -38,35 +38,39 @@ class StudentregistrationController extends ControllerBase
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container)
-  {
+  public static function create(ContainerInterface $container) {
     return new static(
       $container->get('database'),
       $container->get('path.current'),
     );
   }
 
-
   /**
-   * Builds the response.
+   * {@inheritdoc}
    */
-  public function build(Request $request)
-  {
+  public function build(Request $request) {
     if ($request->query->has('result_id')) {
       $studentId = $request->query->get('result_id');
       $query = $this->databasee->select('students')
         ->condition('students.uid', $studentId)
-        ->fields('students', ['uid', 'name', 'rollnumner', 'average_mark', 'email', 'phone', 'dob', 'gender'])
+        ->fields('students', [
+          'uid',
+          'name',
+          'rollnumner',
+          'average_mark',
+          'email',
+          'phone',
+          'dob',
+          'gender',
+        ])
         ->range(0, 1);
       $result = $query->execute()->fetchAssoc();
-      //drupal_get_installed_schema_version('studentregistration');
-      //drupal_set_installed_schema_version('studentregistration');
-
-
+      // drupal_get_installed_schema_version('studentregistration');
+      // drupal_set_installed_schema_version('studentregistration');.
       $build[] = [
         '#theme' => 'studentregistration_result',
         '#name' => $result['name'],
-        //'#age' => $result['age'],
+        // '#age' => $result['age'],
         '#gender' => $result['gender'],
         '#email' => $result['email'],
         '#phone' => $result['phone'],
@@ -76,7 +80,8 @@ class StudentregistrationController extends ControllerBase
         '#id' => $studentId,
         '#cache' => ['contexts' => ['url.query_args:result_id']],
       ];
-    } else {
+    }
+    else {
       $build['content'] = [
         '#type' => 'item',
         '#markup' => $this->t('An error occurred while executing the script, please try filling out the form again! <a href="/registration">Try</a>'),
@@ -85,4 +90,5 @@ class StudentregistrationController extends ControllerBase
 
     return $build;
   }
+
 }

@@ -1,0 +1,28 @@
+# Ukrainian translation of Drupal Site!
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2022-12-06 10:36+0000\n"
+"PO-Revision-Date: 2022-12-06 10:36+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Number 1"
+msgstr "Число 1"
+
+msgid "Number 2"
+msgstr "Число 2"
+
+msgid "Submit"
+msgstr "Підрахувати суму"
+
+msgid "The results is @result"
+msgstr "Результат = @result"
+
+msgid ""
+msgstr ""

@@ -7,14 +7,12 @@ use Drupal\Core\Controller\ControllerBase;
 /**
  * Returns responses for My first module routes.
  */
-class HookThemeExample1 extends ControllerBase
-{
+class HookThemeExample1 extends ControllerBase {
 
   /**
    * Builds the response.
    */
-  public function build()
-  {
+  public function build() {
     $build['content'] = [
       '#type' => 'item',
       '#markup' => $this->t('It works!'),

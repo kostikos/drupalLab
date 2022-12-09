@@ -1,0 +1,76 @@
+# Ukrainian translation of Drupal Site!
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2022-12-06 10:36+0000\n"
+"PO-Revision-Date: 2022-12-06 10:36+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Step 1 from 3: MultistepForm - Personal data"
+msgstr "Крок 1 з 3: Багатокрокова форма - Персональні данні"
+
+msgid "Name"
+msgstr "Ім'я"
+
+msgid "Surname"
+msgstr "Прізвище"
+
+msgid "Next"
+msgstr "Далі"
+
+msgid "Step 2 from 3: MultistepForm - Parameters"
+msgstr "Крок 2 з 3: Багатокрокова форма - Параметри"
+
+msgid "Age"
+msgstr "Вік"
+
+msgid "Male"
+msgstr "Чоловік"
+
+msgid "Female"
+msgstr "Жінка"
+
+msgid "Gender"
+msgstr "Стать"
+
+msgid "Prev"
+msgstr "Назад"
+
+msgid "Interests"
+msgstr "Хобі"
+
+msgid "Chess"
+msgstr "Шахи"
+
+msgid "Football"
+msgstr "Футбол"
+
+msgid "Politics"
+msgstr "Політика"
+
+msgid "Gardening"
+msgstr "Садівництво"
+
+msgid "Dreams"
+msgstr "Мрії"
+
+msgid "Step 3 from 3: MultistepForm - Survey"
+msgstr "Крок 3 з 3: Багатокрокова форма - Опитування"
+
+msgid "Waiting results ..."
+msgstr "Зачекайте...."
+
+msgid "Save"
+msgstr "Відправити"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""

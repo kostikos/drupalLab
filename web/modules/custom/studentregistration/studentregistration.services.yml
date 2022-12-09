@@ -1,9 +1,0 @@
-services:
-  studentregistration.event_subscriber:
-    class: Drupal\studentregistration\EventSubscriber\StudentregistrationSubscriber
-    arguments: ['@messenger']
-    tags:
-      - { name: event_subscriber }
-#  studentregistration.datamanager:
-#    class: Drupal\studentregistration\CustomDataManager
-#    arguments: ['@database']

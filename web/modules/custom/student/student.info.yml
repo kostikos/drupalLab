@@ -3,4 +3,5 @@ type: module
 description: My module with entity query examples
 core_version_requirement: ^9 || ^10
 package: Custom
-
+'interface translation project': student
+'interface translation server pattern': modules/custom/student/translations/student_language.po
