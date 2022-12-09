@@ -14,6 +14,7 @@ sites/*/private
 sites/simpletest
 
 
+/mysql_backup/
 
 /.idea/
 

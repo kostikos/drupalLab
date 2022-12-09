@@ -22,3 +22,5 @@ content:
 hidden:
   field_page_link: true
   field_preview_picture: true
+  langcode: true
+  search_api_excerpt: true

@@ -2,5 +2,5 @@ _core:
   default_config_hash: Fxo10ucofx7hzqr0J7W28VA3lXtpLxHwxY4TT63y2Rw
 langcode: en
 example: 'This is example value from install->plugin_api.settings file'
-node_count: 1
+node_count: 2
 node_type: article
