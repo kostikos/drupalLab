@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Random colors blocks. module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function random_color_blocks_theme($existing, $type, $theme, $path) {
+  return [
+    'random_color_blocks_theme' => [
+      'variables' => [
+        'user' => [],
+        'backgroundColor' => NULL,
+        'colors' => [],
+      ],
+    ],
+  ];
+}

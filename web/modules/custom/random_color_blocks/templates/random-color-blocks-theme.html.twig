@@ -1,0 +1,19 @@
+<div{{ attributes.addClass('mymodule-example-theme') }} style="background-color: {{ backgroundColor }}; ">
+  <h3>
+    <span>
+       {{ user.name }}
+    </span>
+    <span>
+       {{ user.role }}
+    </span>
+  </h3>
+  <div style="display: flex; flex-direction: row; ">
+    {% for key, item in colors %}
+      <div style="width: 210px; display: flex; height: 200px; padding: 25px; margin: 10px; background-color: {{ item }}; justify-content: center;">
+        <span>{{ item }} </span>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+

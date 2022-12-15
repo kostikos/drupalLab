@@ -1,0 +1,3 @@
+example: 'This is example value from install->random_color_blocks.settings file'
+block_count: 1
+langcode: en

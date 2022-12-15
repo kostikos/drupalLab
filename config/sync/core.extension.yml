@@ -28,7 +28,6 @@ module:
   diff: 0
   dynamic_page_cache: 0
   editor: 0
-  event_dispatcher: 0
   exclude_node_title: 0
   facets: 0
   field: 0
@@ -55,6 +54,7 @@ module:
   path: 0
   path_alias: 0
   plugin_api: 0
+  random_color_blocks: 0
   search: 0
   search_api: 0
   search_api_solr: 0
