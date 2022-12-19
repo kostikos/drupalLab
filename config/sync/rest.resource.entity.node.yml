@@ -1,0 +1,31 @@
+uuid: 06053677-6190-492a-8249-c8f1bc5e1149
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - node
+    - serialization
+    - user
+id: entity.node
+plugin_id: 'entity:node'
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+      - cookie
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+      - cookie
+  DELETE:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+      - cookie
