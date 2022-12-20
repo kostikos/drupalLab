@@ -1,0 +1,5 @@
+my_queue_worker.batch:
+  route_name: my_queue_worker.batch
+  title: Dummy batch
+  description: 'Custom Batch API example.'
+  parent: system.admin_config_content
