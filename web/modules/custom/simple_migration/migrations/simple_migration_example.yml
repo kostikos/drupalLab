@@ -1,0 +1,44 @@
+id: simple_migration_example
+label: Migration examples.
+migration_tags:
+  - CSV
+  - Node blog.
+source:
+  plugin: csv
+  path: modules/custom/simple_migration/source/test_data.csv
+  ids: [ID]
+process:
+  title: Title
+  body: text
+  link: url
+  field_category_taxonomy:
+    - plugin: skip_on_empty
+      source: category
+      method: process
+      message: 'No category listed.'
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: tags
+  field_tags_taxonomy:
+    - plugin: skip_on_empty
+      source: tags
+      method: process
+      message: 'No tags listed.'
+    - plugin: explode
+      delimiter: ';'
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: tags
+  type:
+    plugin: default_value
+    default_value: blog
+destination:
+  plugin: entity:node
