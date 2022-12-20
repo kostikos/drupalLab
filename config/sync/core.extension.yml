@@ -9,6 +9,7 @@ module:
   ajaxform: 0
   automated_cron: 0
   backup_migrate: 0
+  basic_auth: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -28,6 +29,7 @@ module:
   diff: 0
   dynamic_page_cache: 0
   editor: 0
+  event_dispatcher: 0
   exclude_node_title: 0
   facets: 0
   field: 0
@@ -55,10 +57,14 @@ module:
   path_alias: 0
   plugin_api: 0
   random_color_blocks: 0
+  rest: 0
+  rest_plugin: 0
+  restui: 0
   search: 0
   search_api: 0
   search_api_solr: 0
   search_api_solr_admin: 0
+  serialization: 0
   shortcut: 0
   student: 0
   studentregistration: 0

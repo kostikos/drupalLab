@@ -1,0 +1,23 @@
+uuid: 0efed5e7-a07e-4402-af58-3a19f8789a1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - rest_plugin
+    - serialization
+    - user
+id: rest_api_examples
+plugin_id: rest_api_examples
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+    - DELETE
+    - PATCH
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie
