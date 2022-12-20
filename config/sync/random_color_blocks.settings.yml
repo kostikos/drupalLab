@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: Zf3RucS-VFUNJy6pVe_klzRszz_1jkkDYyGqmUYEh1E
+langcode: en
+example: 'This is example value from install->random_color_blocks.settings file'
+block_count: 7

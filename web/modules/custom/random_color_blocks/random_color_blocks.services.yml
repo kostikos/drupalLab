@@ -1,0 +1,12 @@
+services:
+  cache_context.custom_request:
+    class: Drupal\random_color_blocks\Cache\Context\CustomRequestCacheContext
+    arguments: ['@request_stack']
+    tags:
+      - { name: cache.context}
+  random_color_blocks.my_cache:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    tags:
+      - { name: cache.bin }
+    factory: cache_factory:get
+    arguments: [my_cache]

@@ -1,0 +1,14 @@
+random_color_blocks.example:
+  path: '/random-color-blocks/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\random_color_blocks\Controller\RandomColorBlocksController::build'
+  requirements:
+    _permission: 'access content'
+random_color_blocks.settings_form:
+  path: '/admin/config/system/random_color_blocks'
+  defaults:
+    _title: 'Plugin API settings'
+    _form: 'Drupal\random_color_blocks\Form\SettingsForm'
+  requirements:
+    _permission: 'administer random_color_blocks configuration'
