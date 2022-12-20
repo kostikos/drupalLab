@@ -1,0 +1,7 @@
+my_queue_worker.batch:
+  path: '/admin/config/content/my-queue-worker-batch'
+  defaults:
+    _title: 'My queue worker batch'
+    _form: 'Drupal\my_queue_worker\Form\BatchForm'
+  requirements:
+    _permission: 'administer site configuration'

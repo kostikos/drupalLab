@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Event dispatcher module.
+ */
+/**
+ * Implements hook_entity_access().
+ */
+function my_queue_worker_entity_access(\Drupal\Core\Entity\EntityInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+  $job = [
+    'user' => $account->getAccountName(),
+    'uid' => $account->id(),
+    'entity' => $entity->getEntityTypeId() . ':' . $entity->bundle() . ':' . $entity->id(),
+    'op' => $operation,
+    'timestamp' => Drupal::time()->getCurrentTime(),
+  ];
+
+  Drupal::queue('my_queue_plugin')->createItem($job);
+  return \Drupal\Core\Access\AccessResult::neutral();
+}
