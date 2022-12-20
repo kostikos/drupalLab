@@ -9,6 +9,7 @@ module:
   ajaxform: 0
   automated_cron: 0
   backup_migrate: 0
+  basic_auth: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -28,7 +29,6 @@ module:
   diff: 0
   dynamic_page_cache: 0
   editor: 0
-  event_dispatcher: 0
   exclude_node_title: 0
   facets: 0
   field: 0
@@ -38,6 +38,8 @@ module:
   help: 0
   history: 0
   image: 0
+  jsonapi: 0
+  jsonapi_extras: 0
   language: 0
   layout_builder: 0
   layout_discovery: 0
@@ -47,6 +49,13 @@ module:
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_drupal_ui: 0
+  migrate_example: 0
+  migrate_example_setup: 0
+  migrate_plus: 0
+  migrate_source_csv: 0
   mymodule: 0
   mysql: 0
   node: 0
@@ -55,10 +64,13 @@ module:
   path: 0
   path_alias: 0
   plugin_api: 0
+  rest: 0
+  restui: 0
   search: 0
   search_api: 0
   search_api_solr: 0
   search_api_solr_admin: 0
+  serialization: 0
   shortcut: 0
   student: 0
   studentregistration: 0
